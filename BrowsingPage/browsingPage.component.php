@@ -69,6 +69,9 @@
 
 	<div class = 'batchShow'>
 		<?php
+
+            //git tets
+
 			for($batchIter = $currentStartBatch; $batchIter >= $currentEndBatch; $batchIter--){
 				$showBatchItem = $batchIter;
 				include('ShowBatch/showBatch.component.php');
@@ -79,6 +82,5 @@
 	    <?php include('Pagination/pagination.component.php'); ?>
     <div>
 </body>
-
 
 </html>
