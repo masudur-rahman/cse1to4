@@ -1,0 +1,12 @@
+html, body {height: 100%;}
+
+div.batchShow {
+    float: left;
+    width: 74%;
+    height: 590px;
+    border: 0px solid #73AD21;
+
+    padding-bottom: 5px;
+
+    overflow: auto; /*should iterms go out of range of div*/
+}
