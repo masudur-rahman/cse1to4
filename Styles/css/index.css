@@ -1,0 +1,66 @@
+header{
+	background-color: yellow;
+	color: red;
+	text-align: left;
+	font-family: Lucida Handwriting;
+	padding: 2px;
+	
+}
+section{
+	background-color: #44ff44;
+	height: 550px;
+    width: 877px;
+    float: left;
+    padding: 1px;
+}
+nav{
+    line-height:30px;
+    background-color:#ffff00;
+    height:550px;
+    width:200px;
+    float:left;
+    padding:1px;
+}
+aside{
+	line-height:200px;
+    background-color:red;
+    height:550px;
+    width:250px;
+    float:right;
+    padding:1px; 
+}
+footer{
+	background-color: black;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 1px;
+}
+h4#contact{
+	padding: 5;
+}
+h4#contact a{
+	color: #ffff00;
+	text-decoration: none;
+}
+h4#contact a:hover{
+	background-color: orange;
+	color: #ffffff;
+}
+ul#menu{
+	padding: 0;
+}
+ul#menu li{
+	display: inline;
+}
+ul#menu li a{
+	background-color: default;
+	color: #ffff00;
+	padding: 10px 20px;
+	text-decoration: none;
+	border-radius: 4px 4px 0 0;
+}
+ul#menu li a:hover{
+	background-color: orange;
+	color: white;
+}

@@ -1,0 +1,172 @@
+div.options {
+    width: 98%;
+    height: 215px;
+
+    margin: 1%;
+
+    padding: 10px;
+    border-radius: 0px 0px 40px 40px;
+    box-shadow: 2px 1px 4px grey;
+    border-top: 3px solid dodgerblue;
+    border-left: 1px solid dodgerblue;
+    border-bottom: 4px solid dodgerblue;
+}
+
+ul {
+    text-align: center;
+    height: 85%;
+}
+
+li.option {
+    list-style-type: none;
+
+    float: left;
+    margin-right: 5%;
+    width: 15%;
+    height: 100%;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.btn {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+
+    background-color: #E6E6E6;
+    border: 0px solid blue;
+
+    box-shadow: 2px 1px 4px grey;
+
+    border-radius: 10px 10px 20px 20px;
+
+    transition: all 0.5s ease-in-out;
+
+    display: inline-block;
+    padding-top: 5%;
+}
+
+.btn:hover {
+    box-shadow: 4px 2px 10px grey;
+
+    animation: colorchange .5s steps(15, start) forwards;
+
+    cursor: pointer;
+}
+
+a.activeButton {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+
+    border: 0px solid blue;
+
+    box-shadow: 1px 1px 1px grey;
+
+    border-radius: 10px 10px 20px 20px;
+
+    transition: all 0.5s ease-in-out;
+
+    display: inline-block;
+    padding-top: 5%;
+    background: linear-gradient(to bottom right, #180079, transparent 100%);
+}
+
+@keyframes colorchange {
+    from {
+        background: linear-gradient(to bottom right, transparent, transparent);
+    }
+    0% {
+        background: linear-gradient(to bottom right, transparent, transparent);
+    }
+    5% {
+        background: linear-gradient(to bottom right, #180079, transparent 5%);
+    }
+    10% {
+        background: linear-gradient(to bottom right, #180079, transparent 10%);
+    }
+    15% {
+        background: linear-gradient(to bottom right, #180079, transparent 15%);
+    }
+    20% {
+        background: linear-gradient(to bottom right, #180079, transparent 20%);
+    }
+    25% {
+        background: linear-gradient(to bottom right, #180079, transparent 25%);
+    }
+    30% {
+        background: linear-gradient(to bottom right, #180079, transparent 30%);
+    }
+    35% {
+        background: linear-gradient(to bottom right, #180079, transparent 35%);
+    }
+    40% {
+        background: linear-gradient(to bottom right, #180079, transparent 40%);
+    }
+    45% {
+        background: linear-gradient(to bottom right, #180079, transparent 45%);
+    }
+    50% {
+        background: linear-gradient(to bottom right, #180079, transparent 50%);
+    }
+    55% {
+        background: linear-gradient(to bottom right, #180079, transparent 55%);
+    }
+    60% {
+        background: linear-gradient(to bottom right, #180079, transparent 60%);
+    }
+    to {
+        background: linear-gradient(to bottom right, #180079, transparent 60%);
+    }
+}
+
+.btn:hover i.icon {
+    transform: rotate(10deg) scale(0.8);
+    transition: 0.5s ease-in-out;
+}
+
+.btn i.icon {
+    border: 0px solid black;
+    float: left;
+    width: 70%;
+    height: 80%;
+    margin-left: 15.5%;
+    text-align: center;
+}
+
+.activeButton i.activeIcon {
+    border: 0px solid black;
+    float: left;
+    width: 70%;
+    height: 80%;
+    margin-left: 15.5%;
+    text-align: center;
+    transform: rotate(10deg) scale(0.8);
+}
+
+a i#icon1 {
+    background: url(../icons/open-book.png) no-repeat;
+    background-size: contain;
+}
+
+a i#icon2 {
+    background: url(../icons/presentation.png) no-repeat;
+    background-size: contain;
+}
+
+a i#icon3 {
+    background: url(../icons/notebook.png) no-repeat;
+    background-size: contain;
+}
+
+a i#icon4 {
+    background: url(../icons/question.png) no-repeat;
+    background-size: contain;
+}
+
+a i#icon5 {
+    background: url(../icons/archive.png) no-repeat;
+    background-size: contain;
+}
