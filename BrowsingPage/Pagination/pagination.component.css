@@ -1,38 +1,6 @@
-/* Pagination links */
-.pagination {
-    width: 74%;
-    height: 50px;
-    text-align: center;
-    border: 0px solid #73AD21;
-
+.container {
     float: left;
-    clear: left;
-
-    padding: 10px;
+    position: relative;
+    border: 0px solid red;
+    width: 74%;
 }
-.pagination a {
-    margin: auto;
-    color: black;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-}
-
-/* Style the active/current link */
-.pagination a.active {
-    background-color: dodgerblue;
-    color: white;
-
-    /*make button disable when active*/
-    pointer-events: none;
-    cursor: default;
-}
-
-/*Style disable link*/
-.pagination a.disable {
-  pointer-events: none;
-  cursor: default;
-}
-
-/* Add a grey background color on mouse-over */
-.pagination a:hover:not(.active) {background-color: #ddd;}
