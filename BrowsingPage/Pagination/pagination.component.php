@@ -1,29 +1,35 @@
-<?php
-    //previous button
-    if($currentPage==1){
-        echo "<a class = 'disable' href=''>&laquo;</a>";
-    }
-    else{
-        $prevPage = $currentPage-1;
-        echo "<a href='browsingPage.component.php?page=".$prevPage."'>&laquo;</a>";
-    }
-
-
-
-    for($iter = $startPageNo; $iter<= $endPageNo; $iter++){
-        if($iter == $currentPage){
-            echo "<a class = 'active' class = 'disable' href=''>".$iter."</a>";
+<script type="text/javascript">
+$(function () {
+     $('#pagination').twbsPagination({
+        totalPages: <?php echo $totalPageNo; ?>,
+        visiblePages: 6,
+        cssStyle: '',
+        first: '&laquo;&lsaquo;',
+        prev: '&laquo;',
+        next: '&raquo;',
+        last: '&rsaquo;&raquo;',
+        onPageClick: function (event, page) {
+            $.ajax({
+            type : 'POST',
+            url  : 'getBatchData.php',
+            data : {
+                pageNo : page,
+                totPage: <?php echo $totalPageNo; ?> ,
+                startBatch: <?php echo $startBatch; ?>,
+                endBatch: <?php echo $endBatch; ?>
+            },
+            success : function(data)
+                {
+                      $(".batchShow").html(data);
+                }
+            });
         }
-        else echo "<a href='browsingPage.component.php?page=".$iter."'>".$iter."</a>";
-    }
+    });
+});
+</script>
 
-
-    //next button
-    if($currentPage==$totalPageNo){
-        echo "<a class = 'disable' href=''>&raquo;</a>";
-    }
-    else{
-        $nextPage = $currentPage+1;
-        echo "<a href='browsingPage.component.php?page=".$nextPage."'>&raquo;</a>";
-    }
-?>
+<div class="container text-xs-center">
+    <nav aria-label="Page navigation">
+        <ul class="pagination pagination-sm" id="pagination"></ul>
+    </nav>
+</div>

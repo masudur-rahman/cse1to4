@@ -1,13 +1,16 @@
 html, body {height: 100%;}
 
 div.batchShow {
-    float: left;
+    display: block;
     width: 74%;
-    height: 590px;
-    margin: 17px auto;
-    border: 0px solid #73AD21;
+    border-right: 4px solid #4CAF50;
+    border-top: 3px solid blue;
+    border-radius: 0px 25px 10px 0px;
+    box-shadow: 5px 5px 20px grey;
+    margin-top: 1.5%;
 
-    padding-bottom: 5px;
+    padding: 10px;
+    text-align: center;
 
     overflow: auto; /*should iterms go out of range of div*/
 }

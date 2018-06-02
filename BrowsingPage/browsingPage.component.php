@@ -56,9 +56,13 @@
 	<!--<script type="text/javascript" src="BatchSearch/batchSearch.component.js"></script>-->
 
 	<!-- for Pagination -->
-	<link rel="stylesheet" type="text/css" href="Pagination/pagination.component.css">
+    <script src = "../Styles/js/jquery-3.1.1.js" type="text/javascript"></script>
+    <script src = "../Styles/js/tether.min.js" type="text/javascript"></script>
+    <script src = "../Styles/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--<link rel="stylesheet" type="text/css" href="../Styles/css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="Pagination/pagination.component.css">
+    <script src = "../Styles/js/jquery.twbsPagination.js" type="text/javascript"></script>
 </head>
-
 
 
 <body>
@@ -68,16 +72,8 @@
 	<?php include('BatchSearch/batchSearch.component.php'); ?>
 
 	<div class = 'batchShow'>
-		<?php
-			for($batchIter = $currentStartBatch; $batchIter >= $currentEndBatch; $batchIter--){
-				$showBatchItem = $batchIter;
-				include('ShowBatch/showBatch.component.php');
-			}
-		?>
 	</div>
-    <div class="pagination">
-	    <?php include('Pagination/pagination.component.php'); ?>
-    <div>
+    <?php include("Pagination/pagination.component.php"); ?>
 </body>
 
 
