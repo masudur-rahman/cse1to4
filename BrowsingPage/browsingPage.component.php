@@ -39,19 +39,17 @@
 
 <head>
 	<title>Browsingt Page</title>
+    <link rel="stylesheet" type="text/css" href="../Styles/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="browsingPage.component.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="../Styles/css/lib/w3.css">
+    <link rel="stylesheet" href="../Styles/css/cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- for Navbar -->
+    <link rel="stylesheet" type="text/css" href="../NavigationBar/navBar.component.css">
 
 	<!-- for batchShow -->
 	<link rel="stylesheet" type="text/css" href="ShowBatch/showBatch.component.css"	>
-
-	<!-- for loader animation -->
-	<link rel="stylesheet" type="text/css" href="../Loader/loader.component.css">
-	<script type="text/javascript" src="../Styles/css/ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-	<script type="text/javascript" src="../Loader/loader.component.js"></script>
 
 	<!-- for BatchSearch -->
 	<link rel="stylesheet" type="text/css" href="BatchSearch/batchSearch.component.css">
@@ -62,8 +60,10 @@
 </head>
 
 
+
 <body>
 	<!--<div class="se-pre-con"></div>--> 								<!--For loader animation -->
+    <?php include("../NavigationBar/navBar.component.php"); ?>
 
 	<?php include('BatchSearch/batchSearch.component.php'); ?>
 

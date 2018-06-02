@@ -1,0 +1,316 @@
+#customNav {
+    width: 100%;
+    background: #0099cc;
+    height: 53px;
+
+    position: relative; /*important to make*/
+    top: 0px;
+    z-index: 10;      /*it remain on top */
+}
+
+
+/*1st level*/
+
+
+#customNav .mainNav {
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    text-align: center;
+    margin-right: 0 auto; /*centers the ul*/
+    padding: 0px;
+    margin: auto;
+}
+
+#customNav .mainNav .mainOption{
+    position: relative; /*VVI for postioning dropDown under this*/
+    list-style: none;
+    color: white;
+
+    display: inline-block;
+    margin: 0px auto;
+    border-radius: 0px;
+    height: 100%;
+
+    border-left: 0px solid white;
+
+    /*color transition */
+    background: linear-gradient(to bottom, white, white 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background-size: 100% 200%; /*THIS SHOWS ONLY THE COLOR1 PART*/
+    background-position: 0 100%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
+
+    transition: all .5s;
+}
+/*    content: '';
+    position: absolute;
+    left: 0px;
+    top: 20%;
+    height: 60%;
+    border-left: 2px solid white;
+}*/
+#customNav .mainNav li:first-child {
+    border: none;
+}
+#customNav .mainNav li:first-child:after { /*FOR REMOVING FIRST BORDER*/
+    border: none;
+}
+#customNav .mainNav li:hover {
+    background-position: 0 0;
+}
+#customNav .mainNav li:hover .firstLevel{
+    color: dodgerblue;
+}
+
+#customNav .mainNav li .firstLevel {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration:none;
+    color: white;
+
+    padding: 12px 25px; /*spacing of a inside li*/
+}
+
+#customNav .mainNav .searchContainer{
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    list-style: none;
+    height: 100%;
+    padding: 6px 25px;
+
+    background: linear-gradient(to right, white, white 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background-size: 200% 100%; /*THIS SHOWS ONLY THE COLOR1 PART*/
+    background-position: 100% 0%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
+    transition: all .5s;
+}
+
+#customNav .mainNav .searchContainer:hover input[type=text] {
+    background-position: 0 0;
+    background-color: buttonface;
+}
+
+#customNav .mainNav .searchContainer input[type=text] {
+    padding: 3px;
+    margin-top: 3px;
+    border: none;
+    width: 80%;
+
+    border-radius: 20px;
+}
+
+#customNav .mainNav .searchContainer button[type=submit] {
+    border: none;
+    border-radius: 10px;
+}
+
+
+/*Second Level*/
+
+.dropDown {
+    list-style: none;
+    position: absolute;
+    width: 213px;
+
+    border: 0px solid blue;
+    padding: 0px; /*VVI this is not auto*/
+
+    opacity: 0;
+    transform: scale(0);
+    visibility: hidden;
+    transition: all ease-out .5s;
+}
+
+.dropDown .subs {
+    position: relative; /*VVI FOR POSTIONING subDropDown alongside this*/
+    border-radius: 10px;
+    width: 100%;
+    color: white;
+    border-left: none;/*ALIGNS THE SUB li VERTICALLY WITH THE FIRST li (!important) part*/
+    border-top: 2px solid white !important; /*!important part gives the first elment border */
+
+    /*color transition */
+    background: linear-gradient(to right, white, white 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background-size: 200% 100%; /*THIS SHOWS ONLY THE COLOR1 PART*/
+    background-position: 100% 0%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
+    transition: all .5s;
+}
+
+.dropDown .subs .secondLevel {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration:none;
+    color: white;
+
+    padding: 7px 15px; /*spacing of a inside li*/
+}
+
+.dropDown .subs:hover .secondLevel {
+    color: dodgerblue;
+}
+
+
+/*Third Level*/
+
+.subDropDown {
+    list-style: none;
+    border: 0px solid red;
+    position: absolute;
+    width: 150px;
+    left: 213px; /*vvi equal to .dropDown width*/
+    top: -2px;
+
+    padding: 0px;/*VVI this is not auto*/
+
+    opacity: 0;
+    transform: scale(0);
+    visibility: hidden;
+    transition: all ease-out .5s;
+}
+.subDropDown .subSubs {
+    position: relative;
+    width: 100%;
+    color: white;
+    border-radius: 10px;
+    border-left: 2px solid white !important;/*ALIGNS THE SUB li VERTICALLY WITH THE FIRST li (!important) part*/
+    border-top: 2px solid white !important; /*!important part gives the first elment border */
+
+    /*color transition */
+    background: linear-gradient(to right, white, white 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background-size: 200% 100%; /*THIS SHOWS ONLY THE COLOR1 PART*/
+    background-position: 100% 0%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
+
+    transition: all .5s;
+}
+
+.subDropDown .subSubs .thirdLevel {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration:none;
+    color: white;
+
+    padding: 7px 15px; /*spacing of a inside li*/
+}
+
+.subDropDown .subSubs:hover .thirdLevel {
+    color: dodgerblue;
+}
+
+
+
+/*for dropdown appearing */
+
+.hasSubs:hover .dropDown {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.hasSubs .hasSubs:hover .subDropDown{
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+
+/*for responsiveness */
+
+#customNav .mainNav .mainOptionIcon {
+    display: none;
+    padding: 5px 25px;
+    font-size: 25px;
+    margin: auto;
+    background: linear-gradient(to bottom, white, white 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background-size: 100% 200%; /*THIS SHOWS ONLY THE COLOR1 PART*/
+    background-position: 0 100%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
+
+    transition: all .5s;
+}
+
+@media screen and (max-width: 1173px) {
+    #customNav .mainNav .mainOption:not(:nth-child(-n+3)) {
+        display: none;
+    }
+    #customNav .mainNav .mainOption:not(:nth-child(-n+3)):after {
+        display: block;
+        border:none;
+    }
+
+    .hasSubs:hover .dropDown {
+        z-index: 100;
+    }
+
+    #customNav .mainNav .mainOptionIcon {
+        display: inline-block;
+        float: right;
+    }
+    #customNav .mainNav .mainOptionIcon .icon{
+        color: white;
+        transition: all .5s;
+    }
+    #customNav .mainNav .mainOptionIcon:hover .icon{
+        color: dodgerblue;
+    }
+}
+
+@media screen and (max-width: 971px) {
+    #customNav .mainNav .searchContainer {
+        display: none;
+    }
+    #customNav .mainNav .searchContainer:after {
+        display: block;
+        border:none;
+    }
+
+    .hasSubs:hover .dropDown {
+        z-index: 100;
+    }
+
+    #customNav .mainNav .mainOptionIcon {
+        display: inline-block;
+        float: right;
+    }
+    #customNav .mainNav .mainOptionIcon .icon{
+        color: white;
+        transition: all .5s;
+    }
+    #customNav .mainNav .mainOptionIcon:hover .icon{
+        color: dodgerblue;
+    }
+}
+
+@media screen and (max-width: 663px) {
+    #customNav .mainNav .mainOption:not(:nth-child(-n+1)) {
+        display: none;
+    }
+    #customNav .mainNav .mainOption:not(:nth-child(-n+1)):after {
+        display: block;
+        border:none;
+    }
+    #customNav .mainNav .searchContainer {
+        display: none;
+    }
+    #customNav .mainNav .searchContainer:after {
+        display: block;
+        border:none;
+    }
+
+    .hasSubs:hover .dropDown {
+        z-index: 100;
+    }
+
+    #customNav .mainNav .mainOptionIcon {
+        display: inline-block;
+        float: right;
+    }
+    #customNav .mainNav .mainOptionIcon .icon{
+        color: white;
+        transition: all .5s;
+    }
+    #customNav .mainNav .mainOptionIcon:hover .icon{
+        color: dodgerblue;
+    }
+}
+
