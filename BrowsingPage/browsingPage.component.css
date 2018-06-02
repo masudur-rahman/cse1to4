@@ -4,6 +4,7 @@ div.batchShow {
     float: left;
     width: 74%;
     height: 590px;
+    margin: 17px auto;
     border: 0px solid #73AD21;
 
     padding-bottom: 5px;
