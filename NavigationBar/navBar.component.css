@@ -96,6 +96,7 @@
 #customNav .mainNav .searchContainer:hover input[type=text] {
     background-position: 0 0;
     background-color: buttonface;
+    width: 85%;
 }
 
 #customNav .mainNav .searchContainer input[type=text] {
