@@ -1,3 +1,4 @@
+<div id = 'myHeader'></div>
 <nav id = 'customNav'>
     <ul class = 'mainNav'>
         <li class="mainOption"><a class="firstLevel" href="#"><i class="fa fa-home fa-fw"></i> HOME</a></li>
@@ -103,11 +104,11 @@
             $navbar.css("position","absolute");
             if(st>lastScrollTop){                   //Down Scroll
                 $navbar.stop().animate({
-                    marginTop: $window.scrollTop()
+                    marginTop: $window.scrollTop()+6
                 });
             }else {                                 //Up scroll
                 $navbar.stop().animate({
-                    marginTop: $window.scrollTop()
+                    marginTop: $window.scrollTop()+6
                 },0);
             }
         } else {
