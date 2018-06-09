@@ -18,7 +18,7 @@
         $rt="
         <ul class = 'itemShow'>
             <div class = 'itemHeading'>
-                <i class='material-icons'>library_books</i>
+                <i class='fa fa-book'></i>
                 <h3>Batch {$showBatchItem}</h3>
             </div>".$ans."
 
