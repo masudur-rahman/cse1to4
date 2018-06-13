@@ -1,4 +1,5 @@
 <script type="text/javascript">
+
 $(function () {
      $('#pagination').twbsPagination({
         totalPages: <?php echo $totalPageNo; ?>,
@@ -26,6 +27,7 @@ $(function () {
         }
     });
 });
+
 </script>
 
 <div class="container text-xs-center">

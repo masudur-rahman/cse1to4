@@ -12,7 +12,7 @@
     else $type = 'other';
 
     //FETCH THE CONTENTS FROM DATABASE
-    $result_material = getMaterial("*", "type = '{$type}'", $conn);
+    $result_material = getMaterial("*", "Course_Materials.batch_id = {$selectedBatch} AND Course_Materials.course_id = '{$selectedCourse}' AND Materials.type = '{$type}'", $conn);
     $jsondata = array();
 
     //SEPARATE THE FETCHED DATA INTO MULTIPLE ARRAYS

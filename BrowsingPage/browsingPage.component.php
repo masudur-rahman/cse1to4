@@ -8,28 +8,30 @@
 
 	//for Pagination
 	$startBatch = 22;
-	$endBatch = 1;
-	$totalBatchNo = $startBatch-$endBatch+1;
-	$batchNoPerPage = 6;
 
-	$totalPageNo = ($totalBatchNo+($batchNoPerPage-1))/$batchNoPerPage;
-	$totalPageNo = floor($totalPageNo);
-    $pageNoPerPage = 6;
 
-    if(isset($_GET['page'])){
-        $currentPage = $_GET['page'];
+    //GET LEVEL AND TERM
+    if(isset($_GET['level'])){
+        $level = $_GET['level'];
     }
-    else $currentPage = 1;
+    else $level = 1;
+    if(isset($_GET['term'])){
+        $term = $_GET['term'];
+    }
+    else $term = 1;
+
+    $currentYear = date("y");                       //to get current year and start batch
+    $startBatch = $currentYear - $level;
+
+    $endBatch = 13;
+    $totalBatchNo = $startBatch-$endBatch+1;        //for pagination
+    $batchNoPerPage = 6;                            //for pagination
+
+    $totalPageNo = ($totalBatchNo+($batchNoPerPage-1))/$batchNoPerPage;     //for pagination
+    $totalPageNo = floor($totalPageNo);                                     //for pagination
 
 
-    $calcDivPage = ($currentPage+($pageNoPerPage-1))/$pageNoPerPage;
-    $calcDivPage = floor($calcDivPage);
-    $startPageNo = ($calcDivPage-1)*$pageNoPerPage+1;
-    $endPageNo = min($totalPageNo, $startPageNo+$pageNoPerPage-1);
-
-    $currentStartBatch = $startBatch-($currentPage-1)*$batchNoPerPage;
-    $currentEndBatch = max($endBatch, $currentStartBatch-$batchNoPerPage+1);
-
+    //echo $level." ".$term;
 
 	include('courses.service.php');
 ?>

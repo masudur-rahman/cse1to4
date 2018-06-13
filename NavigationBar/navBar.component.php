@@ -6,39 +6,39 @@
             <ul class="dropDown">
                 <li class="subs hasSubs"><a class="secondLevel" href="#"><i class="fa fa-angle-right fa-fw"></i> LEVEL 1</a>
                     <ul class="subDropDown">
-                        <li class="subSubs"><a class="thirdLevel" href="#"><i class="fa fa-angle-double-right fa-fw"></i> TERM I</a>
+                        <li class="subSubs"><a class="thirdLevel" href="../BrowsingPage/browsingPage.component.php?level=1&term=1"><i class="fa fa-angle-double-right fa-fw"></i> TERM I</a>
                         </li>
-                        <li class="subSubs"><a class="thirdLevel" href="#"><i class="fa fa-angle-double-right fa-fw"></i> TERM II</a>
+                        <li class="subSubs"><a class="thirdLevel" href="../BrowsingPage/browsingPage.component.php?level=1&term=2"><i class="fa fa-angle-double-right fa-fw"></i> TERM II</a>
                         </li>
                     </ul>
                 </li>
                 <li class="subs hasSubs"><a class="secondLevel" href="#"><i class="fa fa-angle-right fa-fw"></i> LEVEL 2</a>
                     <ul class="subDropDown">
-                        <li class="subSubs"><a class="thirdLevel" href="#"><i class="fa fa-angle-double-right fa-fw"></i> TERM I</a>
+                        <li class="subSubs"><a class="thirdLevel" href="../BrowsingPage/browsingPage.component.php?level=2&term=1"><i class="fa fa-angle-double-right fa-fw"></i> TERM I</a>
                         </li>
-                        <li class="subSubs"><a class="thirdLevel" href="#"><i class="fa fa-angle-double-right fa-fw"></i> TERM II</a>
+                        <li class="subSubs"><a class="thirdLevel" href="../BrowsingPage/browsingPage.component.php?level=2&term=2"><i class="fa fa-angle-double-right fa-fw"></i> TERM II</a>
                         </li>
                     </ul>
                 </li>
                 <li class="subs hasSubs"><a class="secondLevel" href="#"><i class="fa fa-angle-right fa-fw"></i> LEVEL 3</a>
                     <ul class="subDropDown">
-                        <li class="subSubs"><a class="thirdLevel" href="#"><i class="fa fa-angle-double-right fa-fw"></i> TERM I</a>
+                        <li class="subSubs"><a class="thirdLevel" href="../BrowsingPage/browsingPage.component.php?level=3&term=1"><i class="fa fa-angle-double-right fa-fw"></i> TERM I</a>
                         </li>
-                        <li class="subSubs"><a class="thirdLevel" href="#"><i class="fa fa-angle-double-right fa-fw"></i> TERM II</a>
+                        <li class="subSubs"><a class="thirdLevel" href="../BrowsingPage/browsingPage.component.php?level=3&term=2"><i class="fa fa-angle-double-right fa-fw"></i> TERM II</a>
                         </li>
                     </ul>
                 </li>
                 <li class="subs hasSubs"><a class="secondLevel" href="#"><i class="fa fa-angle-right fa-fw"></i> LEVEL 4</a>
                     <ul class="subDropDown">
-                        <li class="subSubs"><a class="thirdLevel" href="#"><i class="fa fa-angle-double-right fa-fw"></i> TERM I</a>
+                        <li class="subSubs"><a class="thirdLevel" href="../BrowsingPage/browsingPage.component.php?level=4&term=1"><i class="fa fa-angle-double-right fa-fw"></i> TERM I</a>
                         </li>
-                        <li class="subSubs"><a class="thirdLevel" href="#"><i class="fa fa-angle-double-right fa-fw"></i> TERM II</a>
+                        <li class="subSubs"><a class="thirdLevel" href="../BrowsingPage/browsingPage.component.php?level=4&term=2"><i class="fa fa-angle-double-right fa-fw"></i> TERM II</a>
                         </li>
                     </ul>
                 </li>
             </ul>
         </li>
-        <li class="mainOption"><a class="firstLevel" href="#"><i class="fa fa-graduation-cap fa-fw"></i> PROJECT MATERIALS</a></li>
+        <li class="mainOption"><a class="firstLevel" href="ProjectMaterials/projectMaterials.component.php"><i class="fa fa-graduation-cap fa-fw"></i> PROJECT MATERIALS</a></li>
         <li class="searchContainer" id = 'searchContainer'>
             <form action="action_page.php">
                 <input type="text" placeholder="Search.." name="search">
