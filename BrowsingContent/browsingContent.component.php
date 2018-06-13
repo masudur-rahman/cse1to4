@@ -25,6 +25,18 @@
     }
     else $selectedBatch = 13;
 
+    // TO SELECT THE COURSE FOR WHICH CONTENTS WILL BE SHOWN
+    if(isset($_GET['courseSelect'])){
+        $_SESSION['courseSelect'] = $_GET['courseSelect'];
+    }
+
+    if(isset($_SESSION['courseSelect'])){
+        $selectedCourse = $_SESSION['courseSelect'];
+    }
+    else $selectedCourse = 'CSE-141';
+
+    //echo $selectedBatch." ".$selectedCourse;
+
     include("fetchContent.php");
 ?>
 

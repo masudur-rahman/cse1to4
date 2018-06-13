@@ -11,7 +11,7 @@
         $ans = "";
         for($iter = 0; $iter < count($courseBefore[$level-1][$term]); $iter++) {
             $ans.="<li class = 'items'>
-                <a href='../BrowsingContent/browsingContent.component.php?batchSelect={$showBatchItem}'>{$courseBefore[$level-1][$term][$iter]}</a>
+                <a href='../BrowsingContent/browsingContent.component.php?batchSelect={$showBatchItem}&courseSelect={$courseBefore[$level-1][$term][$iter]}'>{$courseBefore[$level-1][$term][$iter]}</a>
             </li>";
         }
 
