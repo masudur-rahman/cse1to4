@@ -38,7 +38,7 @@
                 </li>
             </ul>
         </li>
-        <li class="mainOption"><a class="firstLevel" href="ProjectMaterials/projectMaterials.component.php"><i class="fa fa-graduation-cap fa-fw"></i> PROJECT MATERIALS</a></li>
+        <li class="mainOption"><a class="firstLevel" href="../ProjectMaterials/projectMaterials.component.php"><i class="fa fa-graduation-cap fa-fw"></i> PROJECT MATERIALS</a></li>
         <li class="searchContainer" id = 'searchContainer'>
             <form action="action_page.php">
                 <input type="text" placeholder="Search.." name="search">
