@@ -2,7 +2,8 @@
     float: left;
     width: 300px;
     border: 0px solid blue;
-    margin: 1%;
+    margin-top: 2%;
+    margin-left: 1%;
 }
 
 #nameContainer {

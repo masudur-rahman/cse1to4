@@ -22,7 +22,14 @@
     <!-- TOPNAV -->
     <link rel="stylesheet" type="text/css" href="TopNav/topNav.component.css">
 
+    <!--SHOW PROJECTS -->
+    <link rel="stylesheet" type="text/css" href="ShowProjects/showProjects.component.css">
 
+    <!-- for Pagination -->
+    <script src = "../Styles/js/jquery-3.1.1.js" type="text/javascript"></script>
+    <script src = "../Styles/js/tether.min.js" type="text/javascript"></script>
+    <script src = "../Styles/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src = "../Styles/js/jquery.twbsPagination.js" type="text/javascript"></script>
 
 </head>
 
@@ -30,6 +37,7 @@
     <?php include("../NavigationBar/navBar.component.php"); ?>
     <?php include("TopNav/topNav.component.php"); //FOR FILTERING BY TAGS ?>
     <?php include("SideNav/sideNav.component.php"); //FOR SHOWING TECHERS NAME ?>
+    <?php include("ShowProjects/showProjects.component.php"); //FOR SHOWING PROJECTS ?>
 </body>
 
 </html>
