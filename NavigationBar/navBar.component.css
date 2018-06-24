@@ -41,13 +41,12 @@
 
     display: inline-block;
     margin: 0px auto;
-    border-radius: 10px;
     height: 100%;
 
     border-left: 0px solid white;
 
     /*color transition */
-    background: linear-gradient(to bottom, white, white 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background: linear-gradient(to bottom, #e5efff, #e5efff 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
     background-size: 100% 200%; /*THIS SHOWS ONLY THE COLOR1 PART*/
     background-position: 0 100%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
 
@@ -83,29 +82,27 @@
     position: relative;
     list-style: none;
     height: 100%;
+    width: 30%;
     padding: 6px 25px;
 
-    background: linear-gradient(to right, white, white 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
-    background-size: 200% 100%; /*THIS SHOWS ONLY THE COLOR1 PART*/
-    background-position: 100% 0%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
+    background: #0099cc;
 
     border-radius: 20px;
-    transition: all .5s;
-}
-
-#customNav .mainNav .searchContainer:hover input[type=text] {
-    background-position: 0 0;
-    background-color: buttonface;
-    width: 85%;
+    transition: all ease-out 1s;
 }
 
 #customNav .mainNav .searchContainer input[type=text] {
     padding: 3px;
     margin-top: 3px;
     border: none;
-    width: 80%;
+    width: 50%;
 
     border-radius: 20px;
+    text-align: center;
+    transition: all .5s;
+}
+#customNav .mainNav .searchContainer input[type=text]:focus {
+    width: 90%;
 }
 
 #customNav .mainNav .searchContainer button[type=submit] {
@@ -142,7 +139,7 @@ input,button:focus {
     border-top: 2px solid white !important; /*!important part gives the first elment border */
 
     /*color transition */
-    background: linear-gradient(to right, white, white 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background: linear-gradient(to right, #e5efff, #e5efff 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
     background-size: 200% 100%; /*THIS SHOWS ONLY THE COLOR1 PART*/
     background-position: 100% 0%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
     transition: all .5s;
@@ -189,7 +186,7 @@ input,button:focus {
     border-top: 2px solid white !important; /*!important part gives the first elment border */
 
     /*color transition */
-    background: linear-gradient(to right, white, white 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background: linear-gradient(to right, #e5efff, #e5efff 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
     background-size: 200% 100%; /*THIS SHOWS ONLY THE COLOR1 PART*/
     background-position: 100% 0%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
 
@@ -233,14 +230,14 @@ input,button:focus {
     padding: 5px 25px;
     font-size: 25px;
     margin: auto;
-    background: linear-gradient(to bottom, white, white 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background: linear-gradient(to bottom, #e5efff, #e5efff 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
     background-size: 100% 200%; /*THIS SHOWS ONLY THE COLOR1 PART*/
     background-position: 0 100%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
 
     transition: all .5s;
 }
 
-@media screen and (max-width: 1173px) {
+@media screen and (max-width: 1229px) {
     #customNav .mainNav .mainOption:not(:nth-child(-n+3)) {
         display: none;
     }
@@ -271,6 +268,7 @@ input,button:focus {
         display: none;
     }
     #customNav .mainNav .searchContainer {
+        width: 100%;
         display: none;
     }
     #customNav .mainNav .searchContainer:after {

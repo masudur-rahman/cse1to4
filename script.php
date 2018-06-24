@@ -1,9 +1,10 @@
 <?php
     include("Database/databaseConnect.php");
-    $riter = 45;
-    for($iter = 1; $iter<=4; $iter++){
-        $sql = "INSERT INTO Course_Materials
-        VALUES (13, 'EE-181', $riter)";
+    $riter = 801;
+    for($iter = 1; $iter<=400; $iter++){
+        $rate = rand(1,5);
+        $sql = "INSERT INTO Project_Rating
+        VALUES ($riter, $iter, 'sharif', $rate)";
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully"."<br>";
         } else {
