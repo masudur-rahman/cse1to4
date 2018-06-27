@@ -12,3 +12,24 @@
 
     padding: 2%;
 }
+
+@media screen and (max-width: 1229px) {
+    #showProjects {
+        width: 65%;
+        margin-right: 2%;
+    }
+}
+
+@media screen and (max-width: 1005px) {
+    #showProjects {
+        width: 60%;
+        margin-right: 3%;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    #showProjects {
+        width: 45%;
+        margin-right: 8%;
+    }
+}
