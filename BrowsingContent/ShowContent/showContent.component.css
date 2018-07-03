@@ -6,6 +6,7 @@ div.showContent {
 }
 
 .showItems {
+    background: white;
     border : 0px solid blue;
     width: 99%;
     height: 100%;

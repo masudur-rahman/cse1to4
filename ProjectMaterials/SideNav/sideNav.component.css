@@ -12,6 +12,7 @@
 }
 
 .teacherNames {
+    background: white;
     width: 100%;
     border: 0px solid red;
     margin-top: 2%;
@@ -37,8 +38,8 @@
 }
 
 .activeName {
-    border-left: 7px solid blue;
-    border-right: 7px solid blue;
+    border-left: 7px solid #44b299;
+    border-right: 7px solid #44b299;
 }
 
 .names {

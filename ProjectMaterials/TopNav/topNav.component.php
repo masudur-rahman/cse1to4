@@ -1,7 +1,16 @@
 <?php
+
     include("../Database/databaseConnect.php");
     include("../Database/getProjectTopics.php");
+    include('../Database/getProjects.services.php');
+    include('../Database/getRating.component.php');
 
+    $resultProjects = getProjects('', $conn); //get the iterms
+
+
+    /*for($iter = 0 ; $iter<count($resultProjects); $iter++){
+        echo $resultProjects[$iter]['rating']." ".$resultProjects[$iter]['supervisor_id']." ".$resultProjects[$iter]['title']."<br>";
+    }*/
     $topics = getProjectTopics($conn);  //get topics
 ?>
 
@@ -43,9 +52,8 @@
 
 <script type="text/javascript">
 
-    //FOR SELECTED TOPIC DO THE FOLLOWING
-
     $(function() {
+        //WHEN TOPIC TITLE IS CLICKED
         $('.topicTitle').click(function() {
             $(this).siblings('li').removeClass('activeTopic');
             $(this).addClass('activeTopic');
@@ -57,38 +65,53 @@
             if($('.pagination').data("twbs-pagination")){
                 $('.pagination').twbsPagination('destroy');
             }
-            var obj = $('#pagination').twbsPagination({          //Create Pagination
-                    totalPages: 3,
-                    visiblePages: 7,
-                    cssStyle: '',
-                    first: '&laquo;&lsaquo;',
-                    prev: '&laquo;',
-                    next: '&raquo;',
-                    last: '&rsaquo;&raquo;',
-                    onInit: function () {
-                        // fire first page loading
-                    },
-                    onPageClick: function (event, page) {
-                         $('#showItems').html("<div class='sk-folding-cube'><div class='sk-cube1 sk-cube'></div><div class='sk-cube2 sk-cube'></div><div class='sk-cube4 sk-cube'></div><div class='sk-cube3 sk-cube'></div></div><p>Please Wait...</p>");
-
-                        // GET THE DATA TO BE DISPLAYED
-                        /*$.ajax({
-                        type : 'POST',
-                        url  : 'Pagination/getdata.php',
-                        data : {
-                            pageNo : page,
-                            data: jsonString
+            var jsonString = JSON.stringify(<?php echo json_encode($resultProjects); ?>); //get the data base result
+            $.ajax({
+                type : 'POST',                                               //Get the no
+                url  : 'getNoOfPages.php',                       // of pages
+                data : {
+                    data: jsonString,    //pass the data to php page to do the calculation
+                    teacherId: teacherID,
+                    topicId: topicID
+                },
+                success : function(data)
+                {
+                    var obj = $('#pagination').twbsPagination({          //Create Pagination
+                        totalPages: data,
+                        visiblePages: 7,
+                        cssStyle: '',
+                        first: '&laquo;&lsaquo;',
+                        prev: '&laquo;',
+                        next: '&raquo;',
+                        last: '&rsaquo;&raquo;',
+                        onInit: function () {
+                            // fire first page loading
                         },
-                        success : function(data)
-                            {
-                                  $("#showItems").html(data);
-                            }
-                        });*/
+                        onPageClick: function (event, page) {
+                             $('#showProjects').html("<div class='sk-folding-cube'><div class='sk-cube1 sk-cube'></div><div class='sk-cube2 sk-cube'></div><div class='sk-cube4 sk-cube'></div><div class='sk-cube3 sk-cube'></div></div><p>Please Wait...</p>");
 
-                        $('#showProjects').text('Showing page '+page+' of ' + topicTitle + '(' + topicID + ')' + ' Projects under ' + teacherName + '('+ teacherID + ')');
-                    }
-                });
-                console.info(obj.data());
+                            // GET THE DATA TO BE DISPLAYED
+                            $.ajax({
+                            type : 'POST',
+                            url  : 'ShowProjects/Projects/project.component.php',
+                            data : {
+                                pageNo : page,
+                                data: jsonString,    //pass the data to php page to do the calculation
+                                teacherId: teacherID,
+                                topicId: topicID,
+                                teacherName: teacherName,
+                                topicTitle: topicTitle
+                            },
+                            success : function(data)
+                                {
+                                      $("#showProjects").html(data);
+                                }
+                            });
+                        }
+                    });
+                    console.info(obj.data());
+                }
+            });
         });
     });
 </script>

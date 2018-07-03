@@ -31,6 +31,21 @@
     <script src = "../Styles/js/bootstrap.min.js" type="text/javascript"></script>
     <script src = "../Styles/js/jquery.twbsPagination.js" type="text/javascript"></script>
 
+    <!-- for project materials -->
+    <link rel="stylesheet" type="text/css" href="ShowProjects/Projects/project.component.css">
+
+    <!-- for loading animation -->
+    <link rel="stylesheet" type="text/css" href="../Loader/loader.component.css">
+
+    <!-- for showing tooltips -->
+    <link rel="stylesheet" href="../Styles/css/jquery-ui.css">
+    <script src="../Styles/js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( document ).tooltip();
+        } );
+    </script>
+
 </head>
 
 <body>

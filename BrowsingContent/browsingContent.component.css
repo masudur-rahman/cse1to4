@@ -1,4 +1,8 @@
+body {
+    background: url('../bc3.jpg');
+}
 div.options {
+    background:white;
     position: relative;
     width: 95%;
     height: 200px;
