@@ -3,7 +3,11 @@
 <head>
 	<?php
 		session_start(); ob_start();
-		$_SESSION['username']='masudur_rahman';
+		if(!isset($_SESSION['username'])) {
+			$_SESSION['info']="<script type='text/javascript'>$.notify('Please Login first..','info')</script>";
+			header('location: /cse1to4/cse1to4_login.php');
+			exit();
+		}
 		function db_connect(){
 			return mysqli_connect('localhost', 'root', '', 'cse1to4');
 		}
@@ -49,7 +53,7 @@
 						<div class="discussionInfo">
 							<label>by <a href="../user/<?php echo $singleDiscuss['who']; ?>" class="userName"><?php echo $singleDiscuss['who']; ?></a></label>
 							<a class="divider"></a>
-							<label style="font-size: 90%; color: gray;"><?php showTime($singleDiscuss['time']); ?></label>
+							<label style="font-size: 90%; color: white;"><?php showTime($singleDiscuss['time']); ?></label>
 							<a class="divider"></a>
 							<label><?php echo $commentInfo->num_rows; ?> Comments</label>
 							<?php if($singleDiscuss['tag3']){?>
@@ -73,11 +77,5 @@
 			</div>
 		</div>
 	</div>
-	<div class="placeForAdd">
-		<legend>Goto <a href="discussionBoard.php">Discussion Board</a></legend>
-		<legend>Goto <a href="../requestContent/requestContent.php">Requested Contents</a></legend>
-		<legend>Wanna contribute ? Click <a href="../uploadingContent/uploadingContent.component.php">Here</a></legend>
-		<legend>Wanna say something ? Click <a href="../uploadingContent/uploadingContent.generalPost.php">Here</a></legend>
-		<legend><a href="../requestContent/requestContent.component.php">Request</a> for Contents</legend>
-	</div>
+	<?php include('../discussionBoard/placeForAdd.php'); ?>
 </body>

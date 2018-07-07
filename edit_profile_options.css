@@ -1,0 +1,53 @@
+#profile_picture{
+	height: 35vh;
+	width:100vw;
+	background-color: white;
+	box-shadow: 1px 1px 4px grey;
+	border-radius: 10px; 
+}
+
+#show_profile_picture{
+	margin: -7vh 0vw 0vh 5vw;
+}
+#image1{
+	border-radius: 50%;
+	height: 30vh;
+	width: 15vw;
+}
+#showcontents{
+	/*background-color: teal;*/
+	box-shadow: 4px 4px 20px grey;
+	border-radius: 10px 10px 10px 10px;
+	margin-top: 2vh;
+	width: 20vw;
+	height: 68vh;
+	border: 2px solid blue;
+}
+
+#change_profile_picture, #personal_information, #contact_information, #change_username, #change_password, #contribution
+{
+	margin-left: 2vw;
+	background-color: white;
+	box-shadow: 1px 1px 4px grey;
+	height: 6vh;
+	width: 15vw;
+	border-radius: 10px; 
+	text-align: left;
+	margin-top: 2px;
+}
+#change_profile_picture
+{
+	margin-top: 2vh;
+}
+/*
+#contact_information
+{
+	margin-top: -10px;
+}
+#change_username{
+	margin-top: -10px;
+}
+#change_password{
+	margin-top: 
+}
+*/

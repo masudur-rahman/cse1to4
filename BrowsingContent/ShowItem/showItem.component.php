@@ -3,7 +3,7 @@
 include('../../Rating/rating.component.php');
 include('../../Tags/tags.component.php');
 
-function returnItem($ttl, $usr, $rate, $tag, $urlink, $frmt, $dt){  // RETURNS DATA TO GETDATA FILE
+function returnItem($ttl,$discuss, $usr, $rate, $tag, $urlink, $frmt, $dt){  // RETURNS DATA TO GETDATA FILE
 
     $ratediv = rating($rate);                           //  TO GET THE RATING DIV WORKING FOR EACH ITEM
     $tagdiv = tags($tag);                           //  TO GET THE TAG DIV WORKING FOR EACH ITEM
@@ -26,7 +26,7 @@ function returnItem($ttl, $usr, $rate, $tag, $urlink, $frmt, $dt){  // RETURNS D
             <a href = '".$urlink."' class = 'fa fa-download' id = 'button1' title='Download'>
             </a>
 
-            <a href='#' class = 'fa fa-comments' id = 'button2' title='Discuss'>
+            <a href='/cse1to4/discussionBoard/discussionBoard.component.php?postNo={$discuss}' class = 'fa fa-comments' id = 'button2' title='Discuss'>
             </a>
 
 

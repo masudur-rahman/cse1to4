@@ -1,3 +1,6 @@
+body {
+	background: url('../bc3.jpg');
+}
 .discussionBoardOuter{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 	/*width: 60%;
 	max-width: 1026px;
@@ -21,19 +24,24 @@
 .discussionBoard{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 	width: 69vw;
 }
-.placeForAdd{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+/*.placeForAdd{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	margin-top: .7%;
 	width: 22vw;
 	float: left;
-	border: outset cyann;
+	background: #0099dd;
+	border-left: 0px solid #0099cc;
+	border-bottom: 0px solid #0099cc;
+	border-radius: 10px;
+	box-shadow: 4px 4px 15px grey;
 	padding-top: 20px;
+	padding-left: 20px;
 }
-.userName{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-	color: blue;
+*/.userName{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	color: #0000aa;
 	font-style: italic;
 	font-weight: bold;
-	font-family: Courier New;
 	font-variant: small-caps;
-	font-size: 200%;
+	font-size: 150%;
 	text-decoration: none;
 }
 .divider{
@@ -41,35 +49,39 @@
     width: 1px;
     margin: 2px 5px;
     overflow: hidden;
-    background-color: #DDD;
-    border: 1px solid #aaa;
+    background-color: #fff;
+    border: 1px solid white;
 }
 .discussionInfo{
+	color: white;
 	margin-top: 0px;
 	vertical-align: middle;
 	line-height: 22px;
 }
 hr.line{
-	border-top: 1px solid #ccc;
+	border-top: 2px solid #fff;
 	margin: .5em 0;
 }
 .singleDiscussion{font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-	background: #0099cc;
+	background: #0099dd;
 	cursor: pointer;
 	border: outset;
+	box-shadow: 4px 4px 20px grey;
 	border-width: 0px 1px 2px 1px;
 	margin: 5px 0px 15px 0px;
 	border-radius: 30px 10px;
 	padding: 0px 10px;
 }
 .discussionTitle{
+	color: white;
 	font-variant: small-caps;
 	font-style: italic;
 	font-size: 35px;
 }
 label.tags{
-	padding: 0px 5px;
+	padding: 0px 10px;
 	color: blue;
-	background-color: #ddf;
+	border-radius: 10px;
+	background-color: #fff;
 	font-size: 85%;
 }

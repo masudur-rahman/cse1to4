@@ -1,0 +1,80 @@
+#screen{
+}
+
+ #change_profile_picture_division, #change_password_division, #personal_information_division, #contact_information_division
+{
+	box-shadow: 4px 4px 20px grey;
+	border-radius: 10px 10px 10px 10px;
+	margin-top: 2vh;
+	margin-left: 2vw;
+	width: 70vw;
+	height: auto;
+	background-color: lightgrey;
+	float: left;
+	border: 2px solid red;
+
+}
+
+#change_password_division{
+	height: auto;
+}
+
+ input[type=textarea],input[type=tel], input[type=text], input[type=email], input[type=number],input[type=date], input[type=password]{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-right: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 5%;
+    box-shadow: 2px 2px 10px grey;
+}
+
+input[type=textarea]{
+	height: 22vh;
+}
+
+#profile_picture_1{
+    margin: 5vh 0vw 0vh 25vw;
+}
+#profile_picture_selection
+{
+    margin: 7vh 0vw 0vh 17vw;
+}
+#image2{
+    border-radius: 50%;
+    height: 30vh;
+    width: 15vw;
+}
+#ll{
+	margin-left: 5%;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+#txt{
+	resize: none;
+	text-align: left;
+}
+
+input[type=submit] {
+    width: 17%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5%;
+    box-shadow: 2px 2px 10px #4CAF50;
+}
+input:focus, input:hover{
+	outline: none;
+    box-shadow: 4px 4px 20px grey;
+}
+input[type=submit]:focus, input[type=submit]:hover{
+    box-shadow: 4px 4px 20px #4CAF50;
+}
