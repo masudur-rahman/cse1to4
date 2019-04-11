@@ -34,7 +34,7 @@
     for($iter = $start; $iter< min(count($ans),$end+1); $iter++) {
         $anshtml.="
         <div class = 'project' id = 'project{$ans[$iter]['material_id']}' href = ''>
-        <a href = 'discussionPage'>
+        <a href = '/cse1to4/discussionBoard/discussionBoard.component.php?postNo={$ans[$iter]['discuss']}'>
         <div class = 'projectIcon'>
             <div class = 'iconP'>
             </div>
