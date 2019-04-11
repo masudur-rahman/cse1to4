@@ -1,0 +1,38 @@
+#screen{
+	background-color: lightgreyy;
+}
+#feild1{
+	border: 5px solid red;
+	margin-top: 3%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+#personal_information{
+	width: 70vw;
+	height: 70vh;
+	margin: auto;
+}
+
+input[type=text], input[type=email], input[type=number],input[type=date], input[type=password]{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-right: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 10%;
+}
+
+input[type=submit] {
+    width: 15%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10%;
+}
