@@ -18,6 +18,23 @@
 		if($rslt->num_rows==0) return "nothing";
 		return $rslt->fetch_assoc();
 	}
+	function relevantItems($discussID) {
+		$conn=db_connect();
+		$sql="SELECT * FROM Materials WHERE discussion_id=$discussID";
+		return $conn->query($sql);
+	}
+	function relevantProjectThesisInfo($discussID){
+		$conn=db_connect();
+		$sql="SELECT * FROM Project_Materials WHERE discussion_id=$discussID";
+		$rslt=$conn->query($sql);
+		if($rslt->num_rows==0) return "nothing";
+		return $rslt->fetch_assoc();
+	}
+	function relevantProjectItems($discussID){
+		$conn=db_connect();
+		$sql="SELECT * FROM Project_Materials WHERE discussion_id=$discussID";
+		return $conn->query($sql);
+	}
 	function fetchComments($discussID){
 		$conn=db_connect();
 		$sql="SELECT * FROM comment WHERE discussion_id=$discussID and what='discussion' ORDER BY time DESC";
@@ -46,6 +63,7 @@
 		if(strlen($row['tag1'])>0) echo '<label style="float: right">'.$row['tag1'].'</label>';
 	}
 	function showCourse($row){
-		
+
 	}
+
 ?>
