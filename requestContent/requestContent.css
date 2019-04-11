@@ -1,0 +1,74 @@
+
+.requestContentOuter{
+	/*width: 60%;
+	max-width: 1026px;
+	margin: auto;
+	margin: 1vw 2vw 1vw 2vw;*/
+	/*max-width: 1026px;*/
+	/*margin: auto;*/
+	width: 70vw;
+	margin: 1vh 2vw 1vw 2vw;
+	float: left;
+	height: 88vh;
+	overflow: hidden;
+}
+.requestContentInner{
+	/*width: 100%;*/
+	/*width: 1042px;*/
+	width: 73vw;
+    height: 90vh;
+    overflow: auto;
+}
+.requestContent{
+	width: 69vw;
+}
+.placeForAdd{
+	width: 23vw;
+	float: left;
+}
+.userName{
+	color: blue;
+	font-style: italic;
+	font-weight: bold;
+	font-family: Courier New;
+	font-variant: small-caps;
+	font-size: 200%;
+	text-decoration: none;
+}
+.divider{
+    height: 20px;
+    width: 1px;
+    margin: 2px 5px;
+    overflow: hidden;
+    background-color: #DDD;
+    border: 1px solid #aaa;
+}
+.requestInfo{
+	margin-top: 0px;
+	vertical-align: middle;
+	line-height: 22px;
+}
+hr.line{
+	border-top: 1px solid #ccc;
+	margin: .5em 0;
+}
+.singleRequest{
+	cursor: pointer;
+	border: outset;
+	border-width: 0px 1px 2px 1px;
+	margin: 5px 0px 15px 0px;
+	border-radius: 30px 10px;
+	padding: 0px 10px;
+}
+.requestTitle{
+	font-variant: small-caps;
+	font-style: italic;
+	font-size: 35px;
+}
+label#courseNmbr, label#levelTerm{
+	color: green;
+	float: right;
+	padding: 0px 5px;
+	background-color: #dfd;
+	font-size: 85%;
+}

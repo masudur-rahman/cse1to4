@@ -1,0 +1,104 @@
+.uploadingComponent{
+	width: 70vw;
+	margin: 0vw 2vw 1vw 2vw;
+	float: left;
+	height: 88vh;
+	overflow: hidden;
+}
+.uploadingComponentInner{
+	width: 73vw;
+    height: 90vh;
+    overflow: auto;
+    margin-left: 0px;
+}
+.uploadDivision{
+	width: 68vw;
+	border: 2px solid gray;
+	border-radius: 20px 50px 30px;
+	box-shadow: 5px 5px 10px gray;
+	padding: 20px;
+	font-family: Times New Roman;
+}
+.placeForAdd{
+	width: 23vw;
+	float: left;
+}
+input[type=text]{
+	width: 625px; /*51%*/
+	padding: 12px 20px;
+	margin: 0px 0px;
+	display: inline-block;
+	border-width: 0px 0px 1.5px 0px;
+	border-color: gray;
+	/*border: 2px outset cyan;*/
+	border-radius: 13px 7px;
+	box-sizing: border-box;
+}
+input[type=file]{
+	width: 625px; /*51%*/
+	display: inline-block;
+	border-radius: 13px 7px;
+	box-sizing: border-box;
+	padding: 8px 5px;
+	border: outset gray;
+	border-width: 0px 0px 1.5px 0px;
+}
+input[type=submit]{
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	width: 180px;
+	margin-top: 10px;
+	border-radius: 20px 10px;
+}
+select{
+	width: 100px; /*51%*/
+	padding: 12px 10px;
+	margin: 0px 0px;
+	display: inline-block;
+	border-width: 0px 0px 1.5px 0px;
+	border-color: gray;
+	/*border: 2px outset cyan;*/
+	border-radius: 13px 7px;
+	box-sizing: border-box;
+}
+option{
+	border: outset gray;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+	box-shadow: 2px 2px 5px darkgray;
+}
+input[type=file]:focus{
+	box-shadow: 3px 3px 8px darkgray;
+}
+input[type=submit]:hover, input[type=submit]:focus{
+	box-shadow: 4px 4px 10px darkgreen;
+}
+legend.namNai, label.legend{
+	font-size: 30px;
+	margin: 10px 5px 0px 5px;
+}
+
+label.level-term,.courseNo{
+	font-size: 25px;
+	margin: 5px 10px 0px 25px;
+}
+div.leftPart{
+	width: 71%;
+}
+div.rightPart{
+	width: 29%;
+	padding-top: 50px;
+}
+input.courseField, input.tags{
+	width: 200px;
+	padding: 8px 10px;
+	margin: -5px 10px 10px 25px;
+}
