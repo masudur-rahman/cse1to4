@@ -1,16 +1,17 @@
 #showProjects {
+    background-color: white;
     float: right;
     width: 72%;
-    height: 400px;
-    border-top: 2px solid blue;
-    border-bottom: 2px solid blue;
+    border-top: 2px solid #44b299;
+    border-bottom: 2px solid #44b299;
 
     margin-top: 2%;
     margin-right: 1%;
     border-radius: 20px;
     box-shadow: 1px 1px 10px grey;
 
-    padding: 2%;
+    padding: 1%;
+    text-align: center;
 }
 
 @media screen and (max-width: 1229px) {

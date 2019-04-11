@@ -1,0 +1,598 @@
+.slideShowContainer {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+
+    border: 0px solid blue;
+}
+#caption {
+    display: block;
+    max-width: 100%;
+    background: #0099cc;
+    border-bottom: 2px solid white;
+    border-top: 0px solid white;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    padding: 1%;
+}
+#dotdiv {
+    display: block;
+    text-align:center;
+    background: #0099cc;
+    border-top: 2px solid white;
+    border-bottom: 0px solid white;
+    margin-top: -24px;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.mySlides {
+    display: block;
+    width: 100%;
+    height: 25vw;
+    /*background: #cce6ff;*/
+    background: url('../../bc3.jpg');
+    border: 0px solid green;
+    text-align: center;
+}
+.slideFirst {
+    float: left;
+    border: 0px solid blue;
+    margin-left: 3%;
+    width: 19%;
+    height: 100%;
+    padding: 3.4% 1.8%;
+    border-radius: 20px;
+}
+
+.container1 {
+    display: inline-block;
+    border: 0px solid black;
+    width: 12%;
+    height: 100%;
+    margin-left: 5px;
+}
+.container2 {
+    display: inline-block;
+    width: 12%;
+    height: 100%;
+    margin-left: 5px;
+}
+.container3 {
+    display: inline-block;
+    width: 12%;
+    height: 100%;
+    margin-left: 5px;
+}
+.container4 {
+    display: inline-block;
+    width: 12%;
+    height: 100%;
+    margin-left: 5px;
+}
+.slide2 {
+    display: block;
+    border: 0px solid red;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    border-radius: 10px;
+}
+.slide3 {
+    display: block;
+    border: 0px solid red;
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+    text-align: center;
+}
+.slideLast {
+    float: right;
+    border: 0px solid blue;
+    width: 19%;
+    height: 100%;
+    margin-right: 3%;
+    padding: 3.4% 1.8%;
+    border-radius: 20px;
+}
+
+/*Caption*/
+.captionText {
+  color: black;
+  font-size: 15px;
+  padding: 8px 12px;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  background-color: #555;
+
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transform: scale(.5);
+  transition: all 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: white;
+  transform: scale(1);
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+
+
+
+
+/*FOR SHOWING ITEMS*/
+.item1 {
+    width: 190px;
+    height: 240px;
+    margin: auto;
+    padding: 1%;
+    display: block;
+    background: white;
+    position: absolute;
+
+    border: 0px solid black;
+    border-radius: 30px 30px 30px 30px;
+    text-align: center;
+
+    box-shadow: 3px 2px 16px grey;
+    transition: all .3s;
+}
+
+.item1:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.item2 {
+    width: 190px;
+    height: 240px;
+    margin-top: -3%;
+    margin-left: -1.5%;
+    padding: 1%;
+    background: white;
+    position: absolute;
+
+    border: 0px solid black;
+    border-radius: 30px 30px 30px 30px;
+    text-align: center;
+
+    box-shadow: 3px 2px 16px grey;
+    transform: scale(.6);
+    transition: all .3s;
+}
+
+.item2:hover {
+    transform: scale(.65);
+    cursor: pointer;
+}
+
+.ico {
+    width: 100%;
+    height: 35%;
+    border: 0px solid green;
+    margin: auto;
+    background-position: center;
+    background-size: contain;
+    transition: all .5s;
+}
+
+.ico:hover {
+}
+
+.ppt {
+    background: url(../../icons/file_types/ppt.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.pdf {
+    background: url(../../icons/file_types/pdf.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.doc {
+    background: url(../../icons/file_types/doc.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.docx {
+    background: url(../../icons/file_types/docx.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.title {
+    margin-top: 1%;
+    width: 100%;
+    height: 14%;
+    border: 0px solid blue;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+}
+
+.upBy {
+    width: 60%;
+    height: 10%;
+    float:left;
+    border: 0px solid blue;
+    font-size: .7rem;
+}
+
+.userId {
+    width:40%;
+    height: 10%;
+    float:left;
+    border: 0px solid blue;
+
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .7rem;
+}
+
+.userId:hover {
+    text-decoration: none;
+}
+
+.rating {
+    width: 100%;
+    height: 3rem;
+
+    font-size: 1rem;
+}
+.checked {
+    color: orange;
+}
+
+.tags {
+    width: 100%;
+    height: 10%;
+    border: 0px solid blue;
+}
+
+.tagdiv {
+    width: 3vw;
+    height: 100%;
+    float:left;
+
+    border: 0px solid blue;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: .8rem;
+}
+
+.tgs {
+    width: 20%;
+    height: 100%;
+    float: left;
+    margin-left: .5vw;
+    padding: 2px;
+
+    display: inline-block;
+
+
+    border: 0px solid blue;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px grey;
+
+
+    font-size: .9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+}
+
+.tgs:hover {
+    text-decoration: none;
+}
+
+.itemButtons {
+    margin-top: 5%;
+    padding: 3%;
+    width: 100%;
+    height: 18%;
+    border: 0px solid blue;
+    font-size: 1rem;
+}
+
+#button1 {
+    /*background-color: green;*/
+    margin-left: -2%;
+    color:green;
+    padding: .7vw;
+    width: 22%;
+    height: 100%;
+    border: 0px solid blue;
+    display: inline-block;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px;
+    transition: all .5s;
+}
+
+#button1:hover {
+    text-decoration: none;
+    box-shadow: 3px 3px 16px;
+    color: darkgreen;
+}
+
+#button2 {
+    /*background-color: blue;*/
+    margin-left: 4%;
+    color: blue;
+    padding: .7vw;
+    width: 22%;
+    height: 100%;
+    border: 0px solid blue;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px;
+    transition: all .3s;
+}
+
+#button2:hover {
+    text-decoration: none;
+    box-shadow: 3px 3px 16px;
+    color: darkblue;
+}
+
+#button3 {
+    /*background-color: red;*/
+    margin-left: 4%;
+    color: red;
+    padding: .7vw;
+    width: 22%;
+    height: 100%;
+    border: 0px solid blue;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 8px;
+    transition: all .5s;
+}
+
+#button3:hover {
+    text-decoration: none;
+    box-shadow: 3px 3px 16px;
+    color: darkred;
+}
+
+#button1,#button2,#button3:active {
+    text-decoration: none;
+}
+
+/*each item css*/
+#item2 {
+    transform: scale(.5);
+}
+
+
+
+/*For showing projects*/
+
+.project1 {
+    max-width: 200px;
+    height: 160px;
+    border-radius: 10px 30px 10px 10px;
+
+    background: blue;
+    box-shadow: 4px 4px 30px grey;
+
+    display: block;
+
+    text-align: center;
+    transition: all .2s;
+}
+.project1:hover {
+    transform: scale(1.1);
+}
+.project1:hover .projectIcon .iconP {
+    transform: rotate(-45deg);
+}
+
+.project2 {
+    width: 200px;
+    height: 160px;
+    border-radius: 10px 30px 10px 10px;
+
+    background: blue;
+    box-shadow: 4px 4px 30px grey;
+
+    display: block;
+
+    text-align: center;
+    transform: scale(.6);
+    transition: all .2s;
+}
+.project2:hover {
+    transform: scale(.75);
+}
+.project2:hover .projectIcon .iconP {
+    transform: rotate(-45deg);
+}
+
+.projectIcon {
+    width: 100%;
+    height: 60%;
+    padding: 5.5%;
+    transition: all .5s;
+}
+
+.iconP {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background: url(../../icons/project.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: all .5s;
+}
+
+.projectDescription {
+    width: 100%;
+    height: 40%;
+    background: #ddd;
+
+    border-top: 4px solid #eee;
+    text-align: center;
+}
+
+.projectTitle {
+    text-align: left;
+    border: 0px solid white;
+    color: white;
+    width: 50%;
+    height: 100%;
+    float: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 2px 2px 20px grey;
+}
+
+.projectRating {
+    color: black;
+    font-size: 20px;
+}
+
+.checked {
+    color: orange;
+}
+
+.date {
+    text-align: left;
+    margin-top: 2%;
+    display: inline-block;
+    border: 0px solid blue;
+    width: 60%;
+}
+
+.uploader {
+    text-align: right;
+    display: inline-block;
+    width: 30%;
+}
+
+.uploader a {
+    text-decoration: none;
+}
+
+
+
+
+@media screen and (max-width: 1229px) {
+    .mySlides {
+        text-align: center;
+        height: 30vw;
+    }
+}
+
+@media screen and (max-width: 1055px) {
+    .mySlides {
+        text-align: center;
+        height: 32vw;
+    }
+    .slideFirst {
+        width: 19%;
+    }
+
+    .container1 {
+        width: 15%;
+    }
+    .container2 {
+        width: 15%;
+    }
+    .container3 {
+        width: 15%;
+    }
+    .slideLast {
+        width: 19%;
+    }
+    .container4 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .mySlides {
+        text-align: center;
+        height: 35vw;
+    }
+    .slideFirst {
+        width: 19%;
+    }
+
+    .container1 {
+        width: 15%;
+    }
+    .container2 {
+        width: 15%;
+    }
+    .container3 {
+        width: 15%;
+    }
+    .slideLast {
+        width: 19%;
+    }
+    .container4 {
+        display: none;
+    }
+}

@@ -1,7 +1,7 @@
 <div id = 'myHeader'></div>
 <nav id = 'customNav'>
     <ul class = 'mainNav'>
-        <li class="mainOption"><a class="firstLevel" href="#"><i class="fa fa-home fa-fw"></i> HOME</a></li>
+        <li class="mainOption"><a class="firstLevel" href="../HomePage/homePage.component.php"><i class="fa fa-home fa-fw"></i> HOME</a></li>
         <li class="mainOption hasSubs"><a class="firstLevel" href="#"><i class="fa fa-bookmark fa-fw"></i> STUDY MATERIALS</a>
             <ul class="dropDown">
                 <li class="subs hasSubs"><a class="secondLevel" href="#"><i class="fa fa-angle-right fa-fw"></i> LEVEL 1</a>
