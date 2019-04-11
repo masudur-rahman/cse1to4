@@ -1,4 +1,6 @@
-
+body {
+	background: url('/cse1to4/bc3.jpg');
+}
 .requestContentOuter{
 	/*width: 60%;
 	max-width: 1026px;
@@ -22,10 +24,10 @@
 .requestContent{
 	width: 69vw;
 }
-.placeForAdd{
+/*.placeForAdd{
 	width: 23vw;
 	float: left;
-}
+}*/
 .userName{
 	color: blue;
 	font-style: italic;
@@ -59,6 +61,7 @@ hr.line{
 	margin: 5px 0px 15px 0px;
 	border-radius: 30px 10px;
 	padding: 0px 10px;
+	background: #fff;
 }
 .requestTitle{
 	font-variant: small-caps;

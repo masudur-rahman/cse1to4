@@ -1,13 +1,31 @@
 //bkLib.onDomLoaded(function(){ nicEditors.allTextAreas() });
-bkLib.onDomLoaded(function(){          
+bkLib.onDomLoaded(function(){
     new nicEditor({maxHeight : 115}).panelInstance('description');
 });
-
+$.ajax({                                                         //TO GET course SUGGETION
+    type : 'GET',
+    url  : '../Database/getAvailableCourse.php',
+    data : '',
+    dataType: 'json',
+    success : function(data)
+        {
+             //alert(data);
+              $( function() {
+                var availableCourse = data;
+                //alert(availableTags);
+                $( "#courseNo" ).autocomplete({
+                  source: availableCourse
+                });
+            } );
+        }
+});
 $(document).ready(function(){
-	$("input[type=file]#contents").change(function(){
-		$("#divFiles").html('');		
 
-		for (var i = 0; i < this.files.length; i++) {			
+
+	$("input[type=file]#contents").change(function(){
+		$("#divFiles").html('');
+
+		for (var i = 0; i < this.files.length; i++) {
 			var fileId = i;
 			$("#divFiles").append(
 			'<div class="w3-row" style="border: outset cyan; border-width: 0px 0px 2px 0px; border-radius: 13px 7px; padding: 5px 10px 5px 10px;">'+
@@ -36,7 +54,7 @@ $(document).ready(function(){
 		}
 	});
 
-	var uploadCount = 0, totalCount, tag1="", tag2="", tag3="", title, description, courseNo, level, term, requestID;
+	var uploadCount = 0, totalCount, tag1="", tag2="", tag3="", title, description, courseNo, level, term, requestID, contentType, batch;
     $(document).on("submit", "form#uploader", function(event){
         // $("input[type=submit]#submit").click(function(){
         	processTags(document.getElementById('tags').value);
@@ -47,8 +65,10 @@ $(document).ready(function(){
     		title = document.getElementById('title').value;
     		description = document.getElementById('description').value;
             courseNo = document.getElementById('courseNo').value;
+            batch = document.getElementById('batch').value;
             level = $('#level').find(":selected").val();
             term = $('#term').find(":selected").val();
+            contentType = $('#contentType').find(":selected").val();
             requestID=document.getElementById("requestID").value;
     		totalCount = file.files.length;
 
@@ -131,8 +151,10 @@ $(document).ready(function(){
         uploaderForm.append('tag3', removeLeadingSpace(tag3));
         uploaderForm.append('description', description);
         uploaderForm.append('courseNo', courseNo);
+        uploaderForm.append('contentType', contentType);
         uploaderForm.append('level', level);
         uploaderForm.append('term', term);
+        uploaderForm.append('batch', batch);
         //alert(discussion_id);
         uploaderForm.append('discussion_id', discussion_id);
 
@@ -185,7 +207,7 @@ $(document).ready(function(){
             });
         }
     }
-    
+
     function addToDiscussionBoard(){
         var ajax = new XMLHttpRequest();
         ajax.open("POST", "uploadingContent.component.discuss.php");

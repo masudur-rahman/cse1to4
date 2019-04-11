@@ -1,6 +1,20 @@
+body {
+    background: url('../bc3.jpg');
+}
 .showSearchResult{
-	width: 70%;
+	width: 80%;
+    box-shadow: 8px 8px 25px grey;
+    background: white;
 	margin: auto;
-	border: 1px solid red;
+	border: 0px solid red;
 	min-height: 300px;
+    text-align: center;
+}
+#searchHeading {
+    padding: 1%;
+    max-width: 100%;
+    height: 50px;
+    text-align: center;
+    color: black;
+    font-size: 20px;
 }

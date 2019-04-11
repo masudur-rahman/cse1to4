@@ -18,10 +18,10 @@
     height: 90vh;
     overflow: auto;
 }
-.placeForAdd{
+/*.placeForAdd{
 	width: 25vw;
 	float: left;
-}
+}*/
 .showParticularRequest{
 	width: 69vw;
 }

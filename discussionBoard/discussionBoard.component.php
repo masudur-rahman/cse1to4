@@ -1,10 +1,65 @@
 <!DOCTYPE html>
+<?php
+
+include('../Rating/rating.component.php');
+include('../Tags/tags.component.php');
+include('../Database/databaseConnect.php');
+include('../Database/getRating.component.php');
+include("../Database/getProjectTopics.php");
+include('../Database/getProjects.services.php');
+
+function returnItem($ttl, $usr, $rate, $urlink, $frmt, $dt){  // RETURNS DATA TO GETDATA FILE
+
+    $ratediv = rating($rate);                           //  TO GET THE RATING DIV WORKING FOR EACH ITEM
+
+    return "<div class = 'item'>
+        <div class = 'ico ".$frmt."'></div>
+        <div class = 'title' title='".$ttl."'>".$ttl."</div>
+        <div class = 'upUser'>
+            <div class = 'upBy'><b>Uploaded By:</b></div>
+            <a href = '' class = 'userId' title='".$usr."'><strong>".$usr."</strong></a>
+        </div>
+        <div class = 'rating' id = 'rating'>".$ratediv."
+
+        </div>
+        <div class = 'itemButtons'>
+            <a href = '".$urlink."' class = 'fa fa-download' id = 'button1' title='Download'>
+            </a>
+        </div>
+    </div>";
+}
+
+function showProjects ($mtId, $dlink, $ttl, $dt, $usr) {
+	$anshtml="<div class = 'project' id = '{$mtId}' href = ''>
+        <a href = '{$dlink}'>
+        <div class = 'projectIcon'>
+            <div class = 'iconP'>
+            </div>
+            <div class = 'projectTitle' title='{$ttl}'>
+                {$ttl}
+            </div>
+        </div>
+        <div class = 'projectDescription'>";
+
+        //convert date
+        $haha = strtotime( $dt ); ///keno jani important
+        $dateTime = date('d-M-Y', $haha);
+
+        $anshtml.="
+                <div class='date'>{$dateTime}</div>
+                <div class = 'uploader' title = '{$usr}'><a href='#'><b>{$usr}</b></a></div>
+            </div>
+        </a>
+        </div>";
+        return $anshtml;
+}
+
+?>
 <html lang="en">
 <head>
 	<?php require_once('discussionBoard.fetchDBinfo.php'); ?>
 	<?php
 		session_start(); ob_start();
-		$_SESSION['username']='masudur_rahman';
 		function db_connect(){
 			return mysqli_connect('localhost', 'root', '', 'cse1to4');
 		}
@@ -12,6 +67,11 @@
 		else{
 			$_SESSION['msg']="<script type='text/javascript'>$.notify('Invalid Post number...','info')</script>";
 			header('Location: discussionBoard.php');
+			exit();
+		}
+		if(!isset($_SESSION['username'])) {
+			$_SESSION['info']="<script type='text/javascript'>$.notify('Please Login first..','info')</script>";
+			header('location: /cse1to4/cse1to4_login.php');
 			exit();
 		}
 		$username=$_SESSION['username'];
@@ -25,9 +85,15 @@
 	<link rel="icon" href="../icons/CUET_logo.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/lib/w3.css">
-	<link rel="stylesheet" href="../css/cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Styles/css/cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../NavigationBar/navBar.component.css">
 	<link rel="stylesheet" type="text/css" href="discussionBoard.component.css">
+
+	<!-- for showing items -->
+	<link rel="stylesheet" type="text/css" href="../BrowsingContent/ShowItem/showItem.component.css">
+	<link rel="stylesheet" type="text/css" href="../ProjectMaterials/ShowProjects/Projects/project.component.css">
 	<script type="text/javascript" src="../js/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="../js/jquery-latest.min.js"></script>
     <script type="text/javascript" src="../js/notify.js"></script>
@@ -36,7 +102,7 @@
 	<script type="text/javascript" src="discussionBoard.component.js"></script>
 </head>
 
-	<?php include('../NavigationBar/navBar.component.php'); ?>
+	<?php include('../NavigationBar/navBar.component.php');?>
 	<?php
 		echo $msg;
 
@@ -45,7 +111,7 @@
 			$conn=db_connect();
 			$commentText=$conn->real_escape_string($_POST['commentText']);
 			$sql="INSERT INTO comment(discussion_id, commenter, comment) VALUES($postNo, '$username', '$commentText') ";
-			
+
 			if($conn->query($sql)) $_SESSION['msg']="<script type='text/javascript'>$.notify('Your Comment has been acknowledged...','success')</script>";
 			else $_SESSION['msg']="<script type='text/javascript'>$.notify('Oops..! An Error occured...','info')</script>";
 
@@ -61,7 +127,7 @@
 
 			if($conn->query($sql)) $_SESSION['msg']="<script type='text/javascript'>$.notify('Your Reply has been acknowledged...','success')</script>";
 			else $_SESSION['msg']="<script type='text/javascript'>$.notify('Oops..! An Error occured...','info')</script>";
-			
+
 			unset($_POST);
 			header('Location: discussionBoard.component.php?postNo='.$postNo); exit();
 		}
@@ -74,23 +140,38 @@
 				$_SESSION['msg']="<script type='text/javascript'>$.notify('Invalid Post number...','info')</script>";
 				header('Location: discussionBoard.php'); exit();
 			}  ?>
-			<?php $relevantContentInfo=relevantContentMaterialInfo($postNo); ?>
+			<?php
+				$relevantProjectInf="nothing";
+				if($discussInfo['tag1']=='Project / Thesis'){
+					$relevantProjectInf=relevantProjectThesisInfo($postNo);
+				}
+			?>
+			<?php $ContentInfo=relevantContentMaterialInfo($postNo); ?>
+			<?php $relevantContentInfo=relevantItems($postNo); ?>
+			<?php $relevantProjectInfo=relevantProjectItems($postNo); ?>
 			<?php $commentInfo=fetchComments($postNo); ?>
 			<div class="discussionTitle">
 				<?php echo $discussInfo['title']; ?>
-				<hr>
+				<hr class='line'>
 			</div>
 			<div class="discusionDescription">
 				<?php echo $discussInfo['description']; ?>
 			</div>
-			<div class="filesToShow" style="border: 1px solid black">
-				Files will be shown here...
+			<div class="filesToShow">
+				<?php
+					while($relevantProjectInf=="nothing" and $row = $relevantContentInfo->fetch_assoc()) {
+						echo returnItem($row['title'], $row['user_id'], item_rating($row['material_id'],$conn), $row['url'], $row['format'], $row['date_and_time']);
+					}
+					while($relevantProjectInf!="nothing" and $row = $relevantProjectInfo->fetch_assoc()) {
+						echo showProjects($row['material_id'], $row['file_link'], $row['title'], $row['date_time'], $row['user_id']);
+					}
+				?>
 			</div>
 			<!-- <details>Nothing here...</details> -->
 			<hr>
 			<div class="discussionInfo w3-row">
 				<section class="whosProfile w3-col" style="width: 11%;">
-					<img src="../icons/masudur_rahman.jpg" alt="Profile Photo">
+					<img src="../icons/user.png" alt="Profile Photo">
 				</section>
 				<section class="whosControlInfo w3-col" style="width: 88.00%;">
 					<div class="controlUp">
@@ -102,8 +183,6 @@
 					</div>
 					<div class="controlDown">
 						<label id="flag" title="Flag this comment.." onclick="addFlag(flagClick=!flagClick, '<?php echo "#".$postNo; ?>')">Flag</label>
-						<a class="divider"></a>
-						<label id="rate"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></label>
 						<?php //showCourse($relevantContentInfo); ?>
 						<?php if($discussInfo['tag3']){?>
 							<label id="tags" title="Tags"><?php echo $discussInfo['tag3']; ?></label>
@@ -119,26 +198,26 @@
 						else{ ?>
 							<label id="tags" style="float: right;" title="Tags">No Tag provided</label>
 						<?php } ?>
-						<?php if($relevantContentInfo!="nothing"){?>
+						<?php if($ContentInfo!="nothing"){?>
 							<a class="divider" style="float: right;"></a>
-							<label style="float: right;" title="Level & Term" id="levelTerm"><?php echo $relevantContentInfo['term']; ?></label>
-							<label style="float: right;" id="levelTerm"><?php echo $relevantContentInfo['level']; ?></label>
+							<label style="float: right;" title="Level & Term" id="levelTerm"><?php echo $ContentInfo['term']; ?></label>
+							<label style="float: right;" id="levelTerm"><?php echo $ContentInfo['level']; ?></label>
 							<a class="divider" style="float: right;"></a>
-							<label id="courseNmbr" title="Course Number"><?php echo $relevantContentInfo['courseNo']; ?></label>
+							<label id="courseNmbr" title="Course Number"><?php echo $ContentInfo['courseNo']; ?></label>
 						<?php } ?>
 					</div>
 				</section>
 			</div>
 		</div>
 		<div class="showComments">
-			Comments will be here...
+			<h2>Comments</h2>
 			<?php
 			while($row=$commentInfo->fetch_assoc()){ ?>
 				<div class="commentSection w3-row">
 					<section class="profileCmnt w3-col">
 						<center>
 						<div class="profilePhotoCmnt">
-							<img src="../icons/masudur_rahman.jpg" alt="Profile Photo">
+							<img src="../icons/user.png" alt="Profile Photo">
 						</div>
 						</center>
 					</section>
@@ -158,7 +237,7 @@
 							<label id="flag" title="Flag this comment.." onclick="addFlag(flagClick=!flagClick, '<?php echo "#".$identifier; ?>')">Flag</label>
 							<a class="divider"></a>
 							<label id="reply" onclick="showEditor(rplyClick=!rplyClick, '<?php echo "#".$identifier; ?>')">Reply</label>
-							
+
 						</div>
 					</section>
 				</div>
@@ -166,7 +245,7 @@
 					<section class="profileRply w3-col">
 						<center>
 						<div class="profilePhotoRply">
-							<img id="replier" src="../icons/masudur_rahman.jpg" alt="Profile Photo">
+							<img id="replier" src="../icons/user.png" alt="Profile Photo">
 						</div>
 						</center>
 					</section>
@@ -179,7 +258,7 @@
 					</section>
 				</div>
 				<?php
-				
+
 				$replyInfo=fetchReplies($row['comment_id']);
 
 				while($row1=$replyInfo->fetch_assoc()){ ?>
@@ -187,7 +266,7 @@
 					<section class="profileRply w3-col">
 						<center>
 						<div class="profilePhotoRply">
-							<img id="replier" src="../icons/masudur_rahman.jpg" alt="Profile Photo">
+							<img id="replier" src="../icons/user.png" alt="Profile Photo">
 						</div>
 						</center>
 					</section>
@@ -210,11 +289,10 @@
 				<?php } ?>
 			<?php } ?>
 			<div class="commentSection editor w3-row" id="editor">
-				<h3>Add Comment to this post...</h3>
 				<section class="profileCmnt w3-col">
 					<center>
 					<div class="profilePhotoCmnt">
-						<img src="../icons/masudur_rahman.jpg" alt="Profile Photo">
+						<img src="../icons/user.png" alt="Profile Photo">
 					</div>
 					</center>
 				</section>
@@ -230,11 +308,6 @@
 		</div>
 		</div>
 	</div>
-	<div class="placeForAdd">
-		<legend>Goto <a href="discussionBoard.php">Discussion Board</a></legend>
-		<legend>Goto <a href="../requestContent/requestContent.php">Requested Contents</a></legend>
-		<legend>Wanna contribute ? Click <a href="../uploadingContent/uploadingContent.component.php">Here</a></legend>
-		<legend>Wanna say something ? Click <a href="../uploadingContent/uploadingContent.generalPost.php">Here</a></legend>
-		<legend><a href="../requestContent/requestContent.component.php">Request</a> for Contents</legend>
-	</div>
+
+	<?php include('../discussionBoard/placeForAdd.php'); ?>
 </body>

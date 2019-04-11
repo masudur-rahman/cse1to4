@@ -45,7 +45,7 @@
 			$conn=db_connect();
 			$commentText=$conn->real_escape_string($_POST['commentText']);
 			$sql="INSERT INTO comment(discussion_id, what, commenter, comment) VALUES($requestNo, 'request', '$username', '$commentText') ";
-			
+
 			if($conn->query($sql)) $_SESSION['msg']="<script type='text/javascript'>$.notify('Your Comment has been acknowledged...','success')</script>";
 			else $_SESSION['msg']="<script type='text/javascript'>$.notify('Oops..! An Error occured...','info')</script>";
 
@@ -61,7 +61,7 @@
 
 			if($conn->query($sql)) $_SESSION['msg']="<script type='text/javascript'>$.notify('Your Reply has been acknowledged...','success')</script>";
 			else $_SESSION['msg']="<script type='text/javascript'>$.notify('Oops..! An Error occured...','info')</script>";
-			
+
 			unset($_POST);
 			header('Location: requestContent.show.php?requestNo='.$requestNo); exit();
 		}
@@ -107,7 +107,7 @@
 						<label><?php echo $commentInfo->num_rows; ?> Comments</label>
 					</div>
 					<div class="controlDown">
-					
+
 						<label title="Level & Term" id="levelTerm"><?php echo $requestInfo['term']; ?></label>
 						<label id="levelTerm"><?php echo $requestInfo['level']; ?></label>
 						<a class="divider"></a>
@@ -146,7 +146,7 @@
 							<label id="flag" title="Flag this comment.." onclick="addFlag(flagClick=!flagClick, '<?php echo "#".$identifier; ?>')">Flag</label>
 							<a class="divider"></a>
 							<label id="reply" onclick="showEditor(rplyClick=!rplyClick, '<?php echo "#".$identifier; ?>')">Reply</label>
-							
+
 						</div>
 					</section>
 				</div>
@@ -167,7 +167,7 @@
 					</section>
 				</div>
 				<?php
-				
+
 				$replyInfo=fetchReplies($row['comment_id']);
 
 				while($row1=$replyInfo->fetch_assoc()){ ?>
@@ -218,11 +218,5 @@
 		</div>
 		</div>
 	</div>
-	<div class="placeForAdd">
-		<legend>Goto <a href="../discussionBoard/discussionBoard.php">Discussion Board</a></legend>
-		<legend>Goto <a href="requestContent.php">Requested Contents</a></legend>
-		<legend>Wanna contribute ? Click <a href="../uploadingContent/uploadingContent.component.php">Here</a></legend>
-		<legend>Wanna say something ? Click <a href="../uploadingContent/uploadingContent.generalPost.php">Here</a></legend>
-		<legend><a href="../requestContent/requestContent.component.php">Request</a> for Contents</legend>
-	</div>
+	<?php include('../discussionBoard/placeForAdd.php'); ?>
 </body>
