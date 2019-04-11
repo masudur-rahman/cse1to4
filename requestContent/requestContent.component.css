@@ -1,3 +1,6 @@
+body {
+	background: url('/cse1to4/bc3.jpg');
+}
 .requestContent{
 	width: 70vw;
 	margin: 1vh 2vw 1vw 2vw;
@@ -18,11 +21,12 @@
 	box-shadow: 5px 5px 10px gray;
 	padding: 20px;
 	font-family: Times New Roman;
+	background: #eee;
 }
-.placeForAdd{
+/*.placeForAdd{
 	width: 23vw;
 	float: left;
-}
+}*/
 input[type=text]{
 	width: 625px; /*51%*/
 	padding: 12px 20px;

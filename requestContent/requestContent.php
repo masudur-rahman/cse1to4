@@ -3,11 +3,14 @@
 <head>
 	<?php
 		session_start(); ob_start();
-		$_SESSION['username']='masudur_rahman';
 		function db_connect(){
 			return mysqli_connect('localhost', 'root', '', 'cse1to4');
 		}
-
+		if(!isset($_SESSION['username'])) {
+			$_SESSION['info']="<script type='text/javascript'>$.notify('Please Login first..','info')</script>";
+			header('location: /cse1to4/cse1to4_login.php');
+			exit();
+		}
 		$username=$_SESSION['username'];
 		$msg="";
 		if(isset($_SESSION['msg'])){
@@ -20,7 +23,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="requestContent.css">
 	<link rel="stylesheet" href="../css/lib/w3.css">
-	<link rel="stylesheet" href="../css/cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Styles/css/cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../NavigationBar/navBar.component.css">
 	<script type="text/javascript" src="../js/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="../js/notify.js"></script>
@@ -60,11 +65,5 @@
 			</div>
 		</div>
 	</div>
-	<div class="placeForAdd">
-		<legend>Goto <a href="../discussionBoard/discussionBoard.php">Discussion Board</a></legend>
-		<legend>Goto <a href="requestContent.php">Requested Contents</a></legend>
-		<legend>Wanna contribute ? Click <a href="../uploadingContent/uploadingContent.component.php">Here</a></legend>
-		<legend>Wanna say something ? Click <a href="../uploadingContent/uploadingContent.generalPost.php">Here</a></legend>
-		<legend><a href="../requestContent/requestContent.component.php">Request</a> for Contents</legend>
-	</div>
+	<?php include('../discussionBoard/placeForAdd.php'); ?>
 </body>
