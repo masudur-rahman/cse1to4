@@ -1,0 +1,132 @@
+#topNav {
+    display: block;
+    width: 99%;
+
+    border: 0px solid blue;
+    margin-left: 1%;
+
+    height: 200px;
+}
+
+#descriptions {
+    display: inline-block;
+    width: 27.5%;
+    height: 100%;
+
+    border: 0px solid blue;
+    margin: 0 auto;
+}
+
+#hudai {
+    width: 85%;
+    height: 100%;
+    display: inline-block;
+}
+
+#mainHudai {
+    width: 100%;
+    height: 75%;
+    display: block;
+    border-radius: 20px 0px 0px 0px;
+
+    background: url(../top.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#filterTeacher {
+    width: 100%;
+    height: 25%;
+    display: block;
+
+    text-align: center;
+    border-top: 2px solid #baf1e5;
+    border-left: 3px solid #44b299;
+}
+#filterTeacher div {
+    display: inline-block;
+    text-align: center;
+    padding: 3%;
+
+    font-size: 20px;
+    color: black;
+}
+
+#filterTags {
+    float: right;
+    width: 15%;
+    height: 100%;
+    border-top: 3px solid #44b299;
+    border-left: 3px solid #44b299;
+    border-bottom: 3px solid #44b299;
+}
+
+#filterTags div {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 16.67%;
+
+    font-size: 20px;
+    color: black;
+}
+
+#topics {
+    display: inline-block;
+    width: 72%;
+    height: 100%;
+
+    border: 0px solid green;
+}
+
+#topicTitleContainer {
+    list-style: none;
+    padding: 0px;
+    text-align: center;
+}
+
+.topicTitle {
+    background-color: white;
+    display: inline-block;
+    border: 0px solid blue;
+
+    border-radius: 1px 3px 3px 10px;
+    box-shadow: 1px 1px 8px grey;
+
+    padding: .5%;
+    margin-top: 1%;
+    margin-left: 1%;
+
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: all .1s;
+}
+.topicTitle:hover {
+    transform: scale(1.05);
+}
+
+.activeTopic {
+    border-bottom: 3px solid #44b299;
+}
+
+
+
+@media screen and (max-width: 1173px) {
+    #topics {
+        overflow: auto;
+    }
+    #descriptions {
+        overflow: auto;
+    }
+}
+
+@media screen and (max-width: 971px) {
+    #topics {
+        overflow: auto;
+        width: 71%;
+    }
+    #descriptions {
+        overflow: auto;
+    }
+}

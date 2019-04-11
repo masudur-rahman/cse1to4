@@ -1,0 +1,103 @@
+#heading {
+    display: block;
+    border: 0px solid green;
+    font-size: 17px;
+    padding: 2%;
+    border-radius: 10px;
+    color: black;
+
+    border-bottom: 2px solid black;
+}
+
+.oops {
+    padding: 2%;
+    display: block;
+    font-size: 20px;
+    color: red;
+
+}
+.project {
+    width: 200px;
+    height: 160px;
+    border-radius: 10px 30px 10px 10px;
+
+    background: blue;
+    box-shadow: 4px 4px 30px grey;
+
+    display: inline-block;
+    margin: 2.5% 1%;
+
+    text-align: center;
+    transition: all .2s;
+}
+.project:hover {
+    transform: scale(1.1);
+}
+.project:hover .projectIcon .iconP {
+    transform: rotate(-45deg);
+}
+
+.projectIcon {
+    width: 100%;
+    height: 60%;
+    padding: 5.5%;
+    transition: all .5s;
+}
+
+.iconP {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background: url(../../../icons/project.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: all .5s;
+}
+
+.projectDescription {
+    width: 100%;
+    height: 40%;
+    background: #ddd;
+
+    border-top: 4px solid #eee;
+    text-align: center;
+}
+
+.projectTitle {
+    text-align: left;
+    border: 0px solid white;
+    color: white;
+    width: 50%;
+    height: 100%;
+    float: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 2px 2px 20px grey;
+}
+
+.projectRating {
+    color: black;
+    font-size: 20px;
+}
+
+.checked {
+    color: orange;
+}
+
+.date {
+    text-align: left;
+    margin-top: 2%;
+    display: inline-block;
+    border: 0px solid blue;
+    width: 60%;
+}
+
+.uploader {
+    text-align: right;
+    display: inline-block;
+    width: 30%;
+}
+
+.uploader a {
+    text-decoration: none;
+}

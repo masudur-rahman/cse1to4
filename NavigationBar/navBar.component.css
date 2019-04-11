@@ -1,0 +1,335 @@
+#myHeader {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    display: block;
+    width: 100.2%;
+    height: 11vw;
+    border: 0px solid red;
+    background: url(../topNav.jpg);
+    background-size: 100% 115%;
+    background-position: 0% 25.37%;
+    text-align: center;
+}
+
+
+#customNav {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    width: 100%;
+    background: #0099cc;
+    height: 53px;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+
+    position: relative; /*important to make*/
+    top: -6px;
+    z-index: 10;      /*it remain on top */
+}
+
+/*1st level*/
+
+
+#customNav .mainNav {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    width: 100%;
+    height: 100%;
+    border: 0px solid white;
+    text-align: center;
+    margin-right: 0 auto; /*centers the ul*/
+    padding: 0px;
+    margin: auto;
+}
+
+#customNav .mainNav .mainOption{
+    position: relative; /*VVI for postioning dropDown under this*/
+    list-style: none;
+    color: white;
+
+    display: inline-block;
+    margin: 0px auto;
+    height: 100%;
+
+    border-left: 0px solid white;
+
+    /*color transition */
+    background: linear-gradient(to bottom, #e00099, #e00099 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background-size: 100% 200%; /*THIS SHOWS ONLY THE COLOR1 PART*/
+    background-position: 0 100%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
+
+    transition: all .5s;
+}
+#customNav .mainNav li:first-child {
+    border: none;
+}
+#customNav .mainNav li:first-child:after { /*FOR REMOVING FIRST BORDER*/
+    border: none;
+}
+#customNav .mainNav li:hover {
+    background-position: 0 0;
+}
+#customNav .mainNav li:hover .firstLevel{
+    color: white;
+}
+
+#customNav .mainNav li .firstLevel {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration:none;
+    color: white;
+
+    padding: 12px 25px; /*spacing of a inside li*/
+}
+
+#customNav .mainNav .searchContainer{
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    list-style: none;
+    height: 100%;
+    width: 30%;
+    padding: 6px 25px;
+
+    background: #0099cc;
+
+    border-radius: 0px;
+    transition: all ease-out 1s;
+}
+
+#customNav .mainNav .searchContainer input[type=text] {
+    padding: 3px;
+    margin-top: 3px;
+    border: none;
+    width: 50%;
+
+    border-radius: 20px;
+    text-align: center;
+    transition: all .5s;
+}
+#customNav .mainNav .searchContainer input[type=text]:focus {
+    width: 87%;
+}
+
+#customNav .mainNav .searchContainer button[type=submit] {
+    border: none;
+    border-radius: 10px;
+}
+
+input,button:focus {
+    outline: none;
+}
+
+/*Second Level*/
+
+.dropDown {
+    list-style: none;
+    position: absolute;
+    width: 212px;
+
+    border: 0px solid blue;
+    padding: 0px; /*VVI this is not auto*/
+
+    opacity: 0;
+    transform: scale(0);
+    visibility: hidden;
+    transition: all ease-out .5s;
+}
+
+.dropDown .subs {
+    position: relative; /*VVI FOR POSTIONING subDropDown alongside this*/
+    border-radius: 0px;
+    width: 100%;
+    color: dodgerblue;
+    border-left: none;/*ALIGNS THE SUB li VERTICALLY WITH THE FIRST li (!important) part*/
+    border-top: 2px solid white !important; /*!important part gives the first elment border */
+
+    /*color transition */
+    background: linear-gradient(to right, #0099CC, #0099cc 50%, #e00099 50%, #e00099); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background-size: 200% 100%; /*THIS SHOWS ONLY THE COLOR1 PART*/
+    background-position: 100% 0%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
+    transition: all .5s;
+}
+
+.dropDown .subs .secondLevel {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration:none;
+    color: white;
+
+    padding: 7px 15px; /*spacing of a inside li*/
+}
+
+.dropDown .subs:hover .secondLevel {
+    color: white;
+}
+
+
+/*Third Level*/
+
+.subDropDown {
+    list-style: none;
+    border: 0px solid red;
+    position: absolute;
+    width: 150px;
+    left: 212px; /*vvi equal to .dropDown width*/
+    top: -2px;
+
+    padding: 0px;/*VVI this is not auto*/
+
+    opacity: 0;
+    transform: scale(0);
+    visibility: hidden;
+    transition: all ease-out .5s;
+}
+.subDropDown .subSubs {
+    position: relative;
+    width: 100%;
+    color: white;
+    border-radius: 0px;
+    border-left: 2px solid white !important;/*ALIGNS THE SUB li VERTICALLY WITH THE FIRST li (!important) part*/
+    border-top: 2px solid white !important; /*!important part gives the first elment border */
+
+    /*color transition */
+    background: linear-gradient(to right, #0099CC, #0099cc 50%, #e00099 50%, #e00099); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background-size: 200% 100%; /*THIS SHOWS ONLY THE COLOR1 PART*/
+    background-position: 100% 0%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
+
+    transition: all .5s;
+}
+.subDropDown .subSubs:last-child {
+    border-bottom: 2px solid white;
+}
+
+.subDropDown .subSubs .thirdLevel {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration:none;
+    color: white;
+
+    padding: 7px 15px; /*spacing of a inside li*/
+}
+
+.subDropDown .subSubs:hover .thirdLevel {
+    color: white;
+}
+
+
+
+/*for dropdown appearing */
+
+.hasSubs:hover .dropDown {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.hasSubs .hasSubs:hover .subDropDown{
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+
+/*for responsiveness */
+
+#customNav .mainNav .mainOptionIcon {
+    display: none;
+    padding: 5px 25px;
+    font-size: 25px;
+    margin: auto;
+    background: linear-gradient(to bottom, #e5efff, #e5efff 50%, #0099cc 50%, #0099cc); /*TO MAKE THE ELEMENT 50% COLOR1 AND 50% COLOR2*/
+    background-size: 100% 200%; /*THIS SHOWS ONLY THE COLOR1 PART*/
+    background-position: 0 100%; /*THE COLOR1 PART IS HIDDEN AND COLOR2 SHOWED*/
+
+    transition: all .5s;
+}
+
+@media screen and (max-width: 1229px) {
+    #customNav .mainNav .mainOption:not(:nth-child(-n+3)) {
+        display: none;
+    }
+    #customNav .mainNav .mainOption:not(:nth-child(-n+3)):after {
+        display: block;
+        border:none;
+    }
+
+    .hasSubs:hover .dropDown {
+        z-index: 100;
+    }
+
+    #customNav .mainNav .mainOptionIcon {
+        display: inline-block;
+        float: right;
+    }
+    #customNav .mainNav .mainOptionIcon .icon{
+        color: white;
+        transition: all .5s;
+    }
+    #customNav .mainNav .mainOptionIcon:hover .icon{
+        color: dodgerblue;
+    }
+}
+
+@media screen and (max-width: 971px) {
+    #leftLogo {
+        display: none;
+    }
+    #customNav .mainNav .searchContainer {
+        width: 100%;
+        display: none;
+    }
+    #customNav .mainNav .searchContainer:after {
+        display: block;
+        border:none;
+    }
+
+    .hasSubs:hover .dropDown {
+        z-index: 100;
+    }
+
+    #customNav .mainNav .mainOptionIcon {
+        display: inline-block;
+        float: right;
+    }
+    #customNav .mainNav .mainOptionIcon .icon{
+        color: white;
+        transition: all .5s;
+    }
+    #customNav .mainNav .mainOptionIcon:hover .icon{
+        color: dodgerblue;
+    }
+}
+
+@media screen and (max-width: 663px) {
+    #customNav .mainNav .mainOption:not(:nth-child(-n+1)) {
+        display: none;
+    }
+    #customNav .mainNav .mainOption:not(:nth-child(-n+1)):after {
+        display: block;
+        border:none;
+    }
+    #customNav .mainNav .searchContainer {
+        display: none;
+    }
+    #customNav .mainNav .searchContainer:after {
+        display: block;
+        border:none;
+    }
+
+    .hasSubs:hover .dropDown {
+        z-index: 100;
+    }
+
+    #customNav .mainNav .mainOptionIcon {
+        display: inline-block;
+        float: right;
+    }
+    #customNav .mainNav .mainOptionIcon .icon{
+        color: white;
+        transition: all .5s;
+    }
+    #customNav .mainNav .mainOptionIcon:hover .icon{
+        color: dodgerblue;
+    }
+}
+

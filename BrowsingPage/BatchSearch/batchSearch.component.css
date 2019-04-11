@@ -1,0 +1,96 @@
+div.batchSearch {
+    background:url('../../bc4.jpg');
+    position: absolute;
+    float: right;
+    width: 25%;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+
+    /*margin*/
+    margin-top: 18px;
+    margin-left: 75%;
+
+    /*border*/
+    border-radius: 25px 0px 0px 25px;
+    border-left: 5px solid #4CAF50;
+    border-top: 3px solid blue;
+
+    /*shadow*/
+    box-shadow: 4px 8px 4px grey;
+
+    /*color*/
+
+    text-align: center;
+}
+
+div.batchSearch p {
+    text-align: center;
+}
+
+#showChoise ul.itemShow {
+    float: left;
+    /*border*/
+    border-radius: 15px 50px; /*2 side rounding radius */
+    border-top: 2px solid #2F06FA;  /*Solid for making border color */
+    border-left: 4px solid #2F06FA;  /*Solid for making border color */
+    /*size*/
+    width: 100%;   /*Each box width */
+
+    /*margin*/
+    margin: auto;
+    /*shadow*/
+    box-shadow: 4px 8px 4px grey;
+    padding-bottom: 5%;
+
+    background-color: #FEFEFE;
+
+    text-align: left;
+}
+
+select {
+
+    width: 80%;
+    /*marign*/
+    margin: auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #DDDEDE;
+
+    font-size: 12pt;
+    text-align-last: center;
+}
+
+select:hover {
+    border: 1px solid #eee;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow:none;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+
+    width: 50%;
+    height: 40px;
+    margin: auto;
+    background-color: #4CAF50;
+    border:none;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    color: #fff;
+    border: 1px solid #eee;
+    box-shadow: 5px 5px 5px #eee;
+    text-shadow:none;
+
+}
+
+.batchSearch p{
+    font-size: 13pt;
+    font-family: cursive,sans-serif,'Comic Sans Ms', Times New Roman;
+    text-shadow: 2px 2px 10px grey;
+}

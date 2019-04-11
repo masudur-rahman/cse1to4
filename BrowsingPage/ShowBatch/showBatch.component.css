@@ -1,0 +1,101 @@
+ul.itemShow {
+    display: inline-block;
+    /*border*/
+    border-radius: 15px 50px; /*2 side rounding radius */
+    border-top: 2px solid #2F06FA;  /*Solid for making border color */
+    border-left: 4px solid #2F06FA;  /*Solid for making border color */
+    /*size*/
+    width: 31%;   /*Each box width */
+
+    /*margin*/
+    margin-left: 1%;
+    margin-right: 1%;
+
+    /*shadow*/
+    box-shadow: 4px 4px 10px grey;
+    padding-bottom: 2.3%;
+
+
+    background-color: #FEFEFE;
+}
+
+div.itemHeading {
+    padding: 2%;
+    margin-left: -18px;
+}
+
+div.itemHeading i {
+    float: left;
+    margin-right: 10px;
+    font-size: 30px;
+    color: red;
+    text-shadow: 1px 1px 10px grey;
+}
+
+div.itemHeading h3 {
+    display: inline-block;
+    font-family: cursive, sans-serif;
+    font-size: 25px;
+    text-shadow: 1px 1px 10px grey;
+    /*border: 2px solid #73AD21;*/
+}
+
+li.items {
+    list-style-type: none;
+
+    /*size*/
+    width: 100%;
+    height: 35px;
+
+    /*margin*/
+    margin-left: -8%;
+    margin-top: 3%;
+
+    /*border*/
+    border-radius: 5px 10px; /*2 side rounding radius */
+    border: 1px solid white;  /*Solid for making border color */
+    border-left: 5px solid dodgerblue;
+    border-bottom: 2px solid dodgerblue;
+
+    /*Shadow*/
+    box-shadow: 2px 1px 10px grey;
+
+    /*background*/
+    background: linear-gradient(to right, #EAFCFE, #EFF0FF);
+}
+
+li.items a{
+
+    display: inline-block;
+    /*size*/
+    width: 100%;
+    height: 35px;
+
+    /*border*/
+    border-radius: 5px 10px; /*2 side rounding radius */
+
+    /*background*/
+    background-color: #F4F4F6;
+
+    /*transition*/
+    background: linear-gradient(to left,
+                                transparent,
+                                transparent 50%,
+                                #00c6ff 50%,
+                                #00c6ff);
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease-in;
+
+}
+
+li.items a:link {
+    text-decoration: none;
+    text-align: center;
+}
+
+
+li.items a:hover {
+    background-position: 0 0;
+    color:#333;
+}

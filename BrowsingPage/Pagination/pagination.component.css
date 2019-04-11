@@ -1,0 +1,6 @@
+.container {
+    float: left;
+    position: relative;
+    border: 0px solid red;
+    width: 74%;
+}
