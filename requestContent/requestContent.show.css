@@ -1,0 +1,178 @@
+.requestContent{
+	/*width: 70%;*/
+	/*width: 1026px;*/
+	width: 70vw;
+	/*max-width: 1026px;*/
+	/*margin: auto;*/
+	margin: 1vh 2vw 1vw 2vw;
+	float: left;
+	height: 88vh;
+	overflow: hidden;
+	/*outline: 1px solid blue;*/
+}
+
+.requestContentInner{
+	/*width: 100%;*/
+	/*width: 1042px;*/
+	width: 73vw;
+    height: 90vh;
+    overflow: auto;
+}
+.placeForAdd{
+	width: 25vw;
+	float: left;
+}
+.showParticularRequest{
+	width: 69vw;
+}
+.discussionTitle{
+	font-variant: small-caps;
+	font-style: italic;
+	font-size: 35px;
+}
+.discussionInfo{
+	padding: 10px;
+	margin-top: -20px;
+}
+.showComments{
+	/*width: 60%;*/
+	/*max-width: 1026px;*/
+	/*margin: auto;*/
+	/*margin: 1vw 2vw 1vw 2vw;*/
+	padding-bottom: 1vh;
+	/*border-style: inset;
+	border-color: cyan;*/
+}
+.commentSection{
+	margin: 1vw;
+	padding: 0.5vw;
+	width: 93.0%;
+	border: outset;
+	border-width: 0px 1px 2px 1px;
+	border-radius: 30px 10px;
+	box-shadow: 3px 3px 8px gray;
+}
+.profileCmnt{
+	width: 14%;
+	min-width: 50px;
+	/*border-style: solid;*/
+	font-size: 0.9vw;
+	padding-top: 5px;
+}
+.userName{
+	color: blue;
+	font-style: italic;
+	font-weight: bold;
+	font-family: Courier New;
+	font-variant: small-caps;
+	font-size: 200%;
+	text-decoration: none;
+}
+.commentDiv{
+	margin-left: 0.4vw;
+	padding-left: 7px;
+	width: 85.0%;
+}
+.commentReply{
+	margin: 3px 0px;
+	font-family: times new roman;
+	/*font-weight: bold;*/
+	font-size: 110%;
+}
+.whosProfile > img{
+	width: 5.5vw;
+	height: 5.5vw;
+}
+.profilePhotoCmnt > img{
+	border-radius: 50%;
+	width: 5.5vw;
+	height: 5.5vw;
+	margin: 1vh 1vw 0vh 1vw;
+}
+.profilePhotoRply > img{
+	border-radius: 50%;
+	width: 4.5vw;
+	height: 4.5vw;
+	margin: 1vh 1vw 0vh 1vw;
+}
+.replySection{
+	margin-left: 10vw;
+	margin-bottom: 0.1vw;
+	padding: 0.5vw;
+	width: 80.5%;
+	/*max-width: 810px;*/
+	border: outset;
+	border-width: 0px 1px 2px 1px;
+	border-radius: 30px 10px;
+	box-shadow: 3px 3px 8px gray;
+}
+.profileRply{
+	width: 14%;
+	padding-top: 5px;
+	/*border: solid blue;*/
+	font-size: .75vw;
+}
+.replyDiv{
+	padding-left: 7px;
+	width: 84.50%;
+	margin-left: 0.4vw;
+}
+.cmntOptions, .replyOptions{
+	margin-top: -15px;
+}
+label#reply:hover, label#flag:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+a.divider{
+    height: 20px;
+    width: 1px;
+    margin: 2px 5px;
+    overflow: hidden;
+    background-color: #DDD;
+    border: 1px solid #aaa;
+}
+section.commentDivider{
+	height: 70px;
+    width: 1px;
+    margin: 14px 0px;
+    overflow: hidden;
+    background-color: #DDD;
+    border: 1px solid #aaa;
+}
+section.replyDivider{
+	height: 55px;
+    width: 1px;
+    margin: 14px 0px;
+    overflow: hidden;
+    background-color: #DDD;
+    border: 1px solid #aaa;
+}
+label#courseNmbr, label#levelTerm{
+	color: green;
+	padding: 0px 5px;
+	background-color: #dfd;
+	font-size: 85%;
+}
+label#tags{
+	padding: 0px 5px;
+	color: blue;
+	background-color: #ddf;
+	float: right;
+	font-size: 85%;
+}
+hr.line{
+	border-top: 1px solid #ccc;
+	margin: 0.5em 0em;
+	padding: 5px;
+}
+
+.filesToProvide input[type=button]{
+	float: right;
+	color: white;
+	background-color: #00bb00;
+	padding: 8px 14px;
+	border: none;
+	border-radius: 3px;
+	margin-right: 15px;
+}
