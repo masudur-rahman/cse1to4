@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    ob_start();
+    $info="";
+    if(isset($_SESSION['info'])) {
+        $info = $_SESSION['info'];
+        $_SESSION['info'] = "";
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +20,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src = "../Styles/js/jquery-3.1.1.js" type="text/javascript"></script>
+    <script src = "../js/notify.js" type="text/javascript"></script>
     <script src = "../Styles/js/tether.min.js" type="text/javascript"></script>
     <script src = "../Styles/js/bootstrap.min.js" type="text/javascript"></script>
 
@@ -33,7 +44,9 @@
 </head>
 <body>
     <?php include("../NavigationBar/navBar.component.php"); ?>
+    <?php echo $info; ?>
     <?php include("AutoSlides/autoSlides.component.php"); ?>
     <?php include("mostDownloadedMaterials/mostDownloadedMaterials.component.php"); ?>
+    <?php include("../footer.php"); ?>
 </body>
 </html>

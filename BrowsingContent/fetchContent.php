@@ -27,7 +27,8 @@
                 'rating' => item_rating($row['material_id'], $conn),
                 'tags' =>   item_tags($row['material_id'], $conn),
                 'format' => $row['format'],
-                'dateTime' => $row['date_and_time']
+                'dateTime' => $row['date_and_time'],
+                'discuss' => $row['discussion_id']
             );
 
             array_push($jsondata, $jsondatalittle);

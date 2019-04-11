@@ -14,7 +14,7 @@
         $start = ($page-1)*10;
         $end = $start+9;
         for($iter = $start; $iter< min(count($json_a),$end+1); $iter++){
-            $rt.= returnItem($json_a[$iter]['title'], $json_a[$iter]['user_id'], $json_a[$iter]['rating'], $json_a[$iter]['tags'], $json_a[$iter]['url'], $json_a[$iter]['format'], $json_a[$iter]['dateTime']);
+            $rt.= returnItem($json_a[$iter]['title'],$json_a[$iter]['discuss'], $json_a[$iter]['user_id'], $json_a[$iter]['rating'], $json_a[$iter]['tags'], $json_a[$iter]['url'], $json_a[$iter]['format'], $json_a[$iter]['dateTime']);
         }
     }
 

@@ -134,6 +134,16 @@ input,button:focus {
     transition: all ease-out .5s;
 }
 
+#profile {
+    position: absolute;
+    margin-left: -212px;
+    margin-top: 15px;
+    box-shadow: 4px 4px 20px grey;
+    width: 250px;
+    height: 210px;
+    background: white;
+}
+
 .dropDown .subs {
     position: relative; /*VVI FOR POSTIONING subDropDown alongside this*/
     border-radius: 0px;
@@ -251,6 +261,12 @@ input,button:focus {
     #customNav .mainNav .mainOption:not(:nth-child(-n+3)):after {
         display: block;
         border:none;
+    }
+
+    #profile {
+        margin: auto;
+        width: 100%;
+        display: block;
     }
 
     .hasSubs:hover .dropDown {

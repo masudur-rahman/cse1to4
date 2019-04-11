@@ -96,6 +96,9 @@
     text-align: right;
     display: inline-block;
     width: 30%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .uploader a {

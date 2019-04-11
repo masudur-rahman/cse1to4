@@ -9,6 +9,8 @@
             while($row = $result->fetch_assoc()) {
                 $resultarray = array(
                     'material_id' => $row['material_id'],
+                    'discuss' => $row['discussion_id'],
+                    'url' => $row['file_link'],
                     'user_id' => $row['user_id'],
                     'title' => $row['title'],
                     'date_time' => $row['date_time'],
